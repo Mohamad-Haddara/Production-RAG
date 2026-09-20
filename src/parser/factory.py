@@ -60,3 +60,31 @@ class ParserFactory:
              f"No parser available for format: {extension}",
             details={"supported_formats": self.get_supported_formats()}
         )
+
+
+    def get_supported_formats(self) -> list[str]:
+        """
+        Get all supported file formats.
+
+        Returns:
+            list of suppported file extension
+        """
+
+        format = set()
+        for parser in self.parsers:
+            format.update(self.parsers.get_supported_formats())
+
+
+    def supported_formats(self, file_extension: str) -> bool:
+        """
+        Check if format is supported.
+
+        Args:
+            file_extension: File extension to check
+
+        Retrun
+            True if format is supported
+
+        """
+
+        return file_extension.lower() in self.get_supported_formats()
