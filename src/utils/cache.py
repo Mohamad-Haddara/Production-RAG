@@ -78,6 +78,8 @@ docker exec -it redis redis-cli
 import json
 from typing import Optional, Any
 
+from datetime import timedelta
+
 
 import redis.asyncio as aioredis
 
@@ -152,16 +154,126 @@ class RedisCache:
         # Create disconnect
 
 
-        #make a key
-        def _make_key(self, key: str) ->str:
-            """
-            Create a full cache key with prefix.
+    #make a key
+    def _make_key(self, key: str) ->str:
+        """
+        Create a full cache key with prefix.
 
-            Args:
-                - key: Base key
+        Args:
+            - key: Base key
 
-            Returns:
-                - Full key with prefix
-            """
+        Returns:
+            - Full key with prefix
+        """
 
-            return f"{self.key_prefix(key)}"
+        return f"{self.key_prefix(key)}"
+
+
+    # Type hints + docstring — clear contract.
+    async def get(self, key:str) -> Optional[Any]: 
+        """
+        Get value from cache.
+
+        Args:
+            - key: cache key
+
+        Returns:
+            - Cached value or None if not found
+
+        Raises:
+            CacheError: If cache operation fails
+        """
+
+        # The guard - If redis is not connected don't crash - Just return None (acts like cache miss)
+        if not self.client:
+            logger.warning("Redis client is not connected")
+            return None
+
+        try:
+            # Fetch
+            full_key = self._make_key(key) # add prefix: "q1" → "hybrid_rag:q1"
+            value = await self.client.get(full_key) # ask Redis for it
+
+            # Not found - if key isn't in cache -> "cache miss"
+            if value is None:
+                logger.debug(f"Cache miss: {key}")
+                return None 
+
+                # The inner try/except
+            # Deserialize JSON
+            try:
+                deserialized = json.loads(value) # string -> back to dict/list
+                logger.debug(f"Cache hit: {key}")
+                return deserialized
+
+
+            except json.JSONDecodeError as e:
+                # Return as-is if not JSON
+                logger.debug(f"Cache hit (non-JSON): {key}")
+                return value    # not JSON? return the raw string
+
+
+        except Exception as e:
+            logger.error(f"Cache get failed for key: {key}: {e}")
+            # raise CacheError
+            return None
+
+
+
+    async def set(
+            self,
+            key: str,
+            value: Any,
+            ttl: Optional[int] = None
+            ) -> bool:
+
+        """
+        Set value in cache.
+
+        Args:
+            - key: cache key
+            - value: value to cache
+            - ttl: Time-to-live in seconds (None = use defaults)
+        
+        Return:
+            - True if successful
+
+        Raises:
+            CacheError: If cache operation fails
+        """
+
+        # The guard
+        if self.client is None:
+            logger.warning("Redis client not connected")
+            return None
+
+        try:
+
+            full_key = self._make_key(key)
+            ttl = ttl or self.default_ttl
+
+            # Serialize to JSON if not string
+            if isinstance(value, (dict, tuple, list)):
+                serialized = json.dumps(value)
+
+            else:
+                serialized = str(value)
+
+            # set with TTL
+            await self.client.setex(
+                full_key,
+                timedelta(seconds=ttl),
+                serialized
+            )
+
+            logger.debug(f"Cached: {key} (TTL = {ttl}s)")
+            return True
+
+        except Exception as e:
+            logger.error(f"Cahce set failed for key: {key}: {e}")
+            # raise cache error
+
+
+
+# Global cache instance (initialized in main.py)
+cache: Optional[RedisCache] = None
