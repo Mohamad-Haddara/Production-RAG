@@ -110,5 +110,58 @@ class RedisCache:
             - password: Redis password (optional)
             - default: Default TTL in seconds
             - key_prefix: Prefix for all cache keys
+        """
+        self.host = host
+        self.port = port
+        self.db = db
+        self.password = password
+        self.default_ttl = default_ttl
+        self.key_prefix = key_prefix
+
+        logger.info(f"Initialize RedisCache: ({self.host}: {self.port}, db = {self.db})")
+
+
+    async def connect(self) -> None:
+        """
+        Connect to redis
+
+        Raises:
+            RedisConnectionError If connection fails
         
         """
+
+        try:
+            # opens the connection to Redis
+            # Build redis client from a connection string - await ~ connecting is async -> so I wait for it
+            self.client = await aioredis.from_url(
+                f"redis://{self.host}:{self.port}/{self.db}",  # Address: (host, port, database number)
+                password=self.password, # auth, if a server needs it
+                encoding="utf-8", # how bytes are turned into text
+                decode_responses=True # return str instead of raw bytes so i get "value"
+
+            )
+
+            # Test connection
+            await self.client.ping()
+            logger.info("Successfully connected to Redis")
+
+        except Exception as e:
+            logger.error(f"Failed to connect to Redis: {e}")
+            # raise an error
+
+        # Create disconnect
+
+
+        #make a key
+        def _make_key(self, key: str) ->str:
+            """
+            Create a full cache key with prefix.
+
+            Args:
+                - key: Base key
+
+            Returns:
+                - Full key with prefix
+            """
+
+            return f"{self.key_prefix(key)}"
