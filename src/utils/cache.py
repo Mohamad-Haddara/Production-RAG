@@ -77,13 +77,11 @@ docker exec -it redis redis-cli
 
 import json
 from typing import Optional, Any
-
 from datetime import timedelta
 
-
 import redis.asyncio as aioredis
-
 from loguru import logger
+import asyncio
 
 
 
@@ -151,7 +149,12 @@ class RedisCache:
             logger.error(f"Failed to connect to Redis: {e}")
             # raise an error
 
-        # Create disconnect
+    # Create disconnect
+    async def disconnect(self) -> None:
+        """Disconnect from Redis"""
+        if self.client:
+            await self.client.close()
+            logger.info("Disconnect from Redis")
 
 
     #make a key
@@ -199,7 +202,7 @@ class RedisCache:
                 logger.debug(f"Cache miss: {key}")
                 return None 
 
-                # The inner try/except
+            # The inner try/except
             # Deserialize JSON
             try:
                 deserialized = json.loads(value) # string -> back to dict/list
@@ -243,9 +246,9 @@ class RedisCache:
         """
 
         # The guard
-        if self.client is None:
+        if not self.client:
             logger.warning("Redis client not connected")
-            return None
+            return False
 
         try:
 
@@ -273,7 +276,100 @@ class RedisCache:
             logger.error(f"Cahce set failed for key: {key}: {e}")
             # raise cache error
 
+        
+    async def delete(self, key:str) -> bool:
+        """
+        Delete key from cache.
 
+        Args:
+            key: Cache key
+
+        Returns:
+            True if deleted, False if not found
+
+        Raise
+            CacheError: If cache operation fails
+        """
+
+        # If redis is not connected - don't crash just return non
+        if not self.client:
+            logger.warning("Redis client not connected")
+            return False
+
+        try:
+            full_key = self._make_key(key)
+            result = await self.client.delete(full_key)
+
+            if result:
+                logger.debug(f"Deleted from cache: {key}")
+                return True
+
+            else:
+                logger.debug(f"Cache key not found: {key}")
+                return False
+
+        except Exception as e:
+            logger.error(f"Cache delete failed for key: {key}: {e}")
+            # raise cache error
+
+
+    async def exists(self, key: str) -> bool:
+        """
+        Check if key exists in cache.
+
+        Args:
+            key: Cache key
+
+        Return:
+            True if exists
+        
+        Raises:
+            CacheError: If cache operation fails
+        """
+
+        if not self.client:
+            logger.warning("Redis client is not connected")
+            return False
+
+        try:
+            full_key = self._make_key(key)
+            result = await self.client.exists(full_key)
+
+            return bool(result)
+
+        except Exception as e:
+            logger.error(f"Cache exists check failed for key {key}: {e}")
+            # raise error
+
+    
 
 # Global cache instance (initialized in main.py)
+# It is a global variable - any part of the app can import and use to reach the same Redis cache.
 cache: Optional[RedisCache] = None
+
+
+def get_cache() -> Optional[RedisCache]:
+    """
+    Get global cache instance.
+
+    Returns:
+        RedisCache instance or None if not initialized
+    """
+
+    return cache
+
+# if __name__ == "__main__":
+#     redis_cache = RedisCache()
+#     asyncio.run(redis_cache.connect())
+    
+"""
+I called async function but I forgot to await it -> so it never actually run
+
+The method which have async -> which means calling it just creates a coroutine object.
+It doesn't execute it until I await it.
+
+Rule of thumb: any function defined with async def (like your connect, get, set) must be called with await.
+
+
+
+"""
