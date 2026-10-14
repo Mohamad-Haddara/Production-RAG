@@ -8,15 +8,18 @@ from pathlib import Path
 from src.parser.factory import ParserFactory
 
 router = APIRouter(
-    prefix="api/v1/documents", 
+    prefix="/api/v1/documents", 
     tags=["documents"]
     )
 
 
 # Built once, reused (Docling is heavy to construct)
 parser_factory = ParserFactory()
-SUPPORTED_SUFFIX = {".pdf", ".csv", ".html", ".htm", ".json"}
+SUPPORTED = {".pdf", ".docx", ".html", ".htm", ".csv", ".json"}
 
+# Simple in-memory status store - replace it with Postgres later
+# Resets on restart and isn't shared across workers; fine for a first version.
+_status: dict[str, dict] = {}
 
 @router.post("/upload", status_code=status.HTTP_201_CREATED)
 async def upload_document(
@@ -40,9 +43,10 @@ async def upload_document(
     logger.info(f"Document upload requested: {file.filename}")
 
     suffix = Path(file.filename).suffix.lower()
+    logger.info(f"The suffix is: {suffix}")
 
-    if suffix is not SUPPORTED_SUFFIX:
-        raise HTTPException(status_code=415, detail=f"Unsupported format: {suffix}")
+    #if suffix is not SUPPORTED:
+    #   raise HTTPException(status_code=415, detail=f"Unsupported format: {suffix}")
 
     # pull the entire uploaded file into memory as bytes
     contents = await file.read() # content now as bytes ~ reads all the content as bytes - await because reading in async
@@ -61,6 +65,14 @@ async def upload_document(
     document_id = uuid.uuid4()
 
     blob_name = f"{document_id}/{file.filename}"
+
+
+    _status[document_id] = {
+        "documnet_id": document_id,
+        "filename": file.filename,
+        "blob_path": "Later",
+        "status": "uploaded" 
+    }
 
 
     return {

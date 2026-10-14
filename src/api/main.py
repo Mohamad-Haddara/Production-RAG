@@ -10,6 +10,7 @@ from typing import AsyncIterator
 from fastapi.middleware.cors import CORSMiddleware
 from src.utils.cache import RedisCache, cache as global_cache
 from src.core.config import AppSettings
+from src.api.routes import documents
 
 
 
@@ -93,7 +94,7 @@ So that, becuase of some model requires 24GB of memory to perform inference, I s
 on separate application instances and GPUs instead.
 
 """
-
+# Memorize pattern: Initialize - await connect - set global cache - yield (apps runs here) - shutdown 
 # I can implement model prelaoding using application lifespan
 @asynccontextmanager # this decorator used to handle startup and shutdown events as a part of an async context manager
 async def lifespan(app: FastAPI):
@@ -113,28 +114,28 @@ async def lifespan(app: FastAPI):
     logger.info("Starting Advanced RAG API...")
 
     # Initialize Redis cache (Preload at a startup)
-    #if settings.redis_host:
-    try:
-        redis_cache = RedisCache(
-            host=settings.redis_host,
-            port = settings.redis_port,
-            password=settings.redis_password,
-            default_ttl=3600
-        )
+    if settings.redis_host:
+        try:
+            redis_cache = RedisCache(
+                host=settings.redis_host,
+                port = settings.redis_port,
+                password=settings.redis_password,
+                default_ttl=3600
+            )
 
-        await redis_cache.connect()
+            await redis_cache.connect()
 
-        # Set global cache
-        import src.utils.cache as cache_module
-        cache_module.cache = redis_cache
+            # Set global cache
+            import src.utils.cache as cache_module
+            cache_module.cache = redis_cache
 
-        logger.info("Redis cache initialized")
+            logger.info("Redis cache initialized")
 
-    except Exception as e:
-        logger.warning(f"Failed to intialize redis: {e}. Continuing withou cache.")
+        except Exception as e:
+            logger.warning(f"Failed to intialize redis: {e}. Continuing withou cache.")
 
-    #else:
-        #logger.info("Redis not configured, running without cache.")
+    else:
+        logger.info("Redis not configured, running without cache.")
 
 
     logger.info("API startup complete")
@@ -187,6 +188,11 @@ A Common pattern in backend development is to use middleware to:
 
 Cross-origin resource sharing
 ---------------------------------
+If I try to open the HTML file in our browser and click for an example the Start Streaming button, nothing will happens.
+I can check browser network tab to view what happened to the outgoing requests.
+
+What I noticed that our browser has blocked outgoing requests to our server as its CORS checks with our server have failed
+
 CORS is a security mechanism implemented in browsers to control how resources on a web page can be requested from another domain,
 and is relevant only when sending requests directly from the browser instead of a server.
 
@@ -196,7 +202,19 @@ than server.
 For example, if our client is hosted on 'https://example.com' and it needs to fetch data from an API hosted on 
 'https://api.example.com', the browser will block this request unless the API server has CORS enabled.
 
-For now, I can bypass these CORS errors by adding a CORS middleware on our server
+For now, I can bypass these CORS errors by adding a CORS middleware on our server, to allow any incoming requests from browser
+
+
+Streamlit avoids triggering the CORS mechanism by sending requests on its internal server even though the generated UI runs on the browser.
+
+On the other hand, the FastAPI documentation page makes requests from the same origin as the server (i.e., http://localhost:8000), 
+so requests by default don’t trigger the CORS security mechanism.
+
+VERY IMPORTANT
+I configure the CORS middleware to process any incoming requests, effectively bypassing the CORS security mechanism for easier development. 
+In production, you should allow only a handful of origins, methods, and headers to be processed by your server.
+
+Go to network tab to view the incoming stream from our SSE endpoint
 
 
 
@@ -234,17 +252,19 @@ to your server as its preflight cross-origin resource sharing (CORS) checks with
 """
 # Apply CORS settings
 # Add CORS Middleware
+# Allowing incoming requests from ant=y origin, methods (GET,POST,...) and headers
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"], # Configure for production
     allow_credentials=["*"],
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"], 
 )
 
 
 
-
+# Register Routers
+app.include_router(documents.router)
 
 
 # Create Root Endpoint 

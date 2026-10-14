@@ -30,7 +30,7 @@ class ParserFactory:
         ]
 
 
-        logger.info(f"Parser factory initialized with {len(self.parser)} parser")
+        logger.info(f"Parser factory initialized with {len(self.parsers)} parser")
 
 
     def get_parser(self, file_path: Union[str, Path]) -> BaseParser:

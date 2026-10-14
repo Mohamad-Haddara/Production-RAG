@@ -1,0 +1,501 @@
+document_id,title,doc_type,department,language,pages,file_size_kb,uploaded_by,upload_date,status,chunk_count,ocr_used,confidentiality
+DOC-00001,Procurement Guidelines 2024 - East Africa,manual,HR,ar,230,25300,y.saleh,2025-10-03,indexed,719,false,internal
+DOC-00002,Procurement Guidelines 2025 - Sudan,presentation,HR,en,268,23048,t.okeke,2026-01-15,indexed,1030,false,internal
+DOC-00003,Audit Findings 2026 - Kenya,proposal,Executive Office,en,154,26026,j.mwangi,2025-10-09,indexed,457,false,internal
+DOC-00004,Procurement Guidelines 2026 - Bangladesh,contract,IT,en,245,35770,m.haddara,2026-02-26,indexed,769,false,restricted
+DOC-00005,Procurement Guidelines 2026 - South Asia,manual,Finance,ar,104,7488,y.saleh,2025-06-10,indexed,295,false,restricted
+DOC-00006,Training Manual 2024 - East Africa,proposal,Executive Office,ar,48,1728,m.haddara,2025-04-05,indexed,188,false,restricted
+DOC-00007,Vendor Contract 2025 - Jordan,minutes,HR,en,198,23958,t.okeke,2025-11-10,indexed,584,false,internal
+DOC-00008,Programme Evaluation 2025 - Qatar,proposal,Programmes,ar,217,38409,k.thapa,2026-04-20,indexed,781,true,public
+DOC-00009,Partnership Agreement 2024 - Bangladesh,proposal,HR,en,217,17143,m.haddara,2026-01-18,indexed,707,false,internal
+DOC-00010,Quarterly Progress Report 2025 - Lebanon,contract,IT,en,181,9774,m.haddara,2026-08-15,indexed,732,false,internal
+DOC-00011,Baseline Survey 2024 - Lebanon,minutes,HR,ar,192,26688,k.thapa,2026-03-01,indexed,642,false,public
+DOC-00012,Monitoring Framework 2025 - South Asia,dataset,HR,en,24,1656,t.okeke,2026-03-30,indexed,56,false,public
+DOC-00013,Risk Register 2024 - East Africa,policy,IT,en,134,20636,n.aziz,2025-06-21,indexed,413,false,public
+DOC-00014,Data Protection Policy 2024 - Global,proposal,Monitoring and Evaluation,ar,252,10080,k.thapa,2025-07-19,indexed,925,false,internal
+DOC-00015,HR Policy 2024 - Morocco,presentation,Executive Office,en,187,21505,a.rahman,2025-05-18,indexed,511,false,internal
+DOC-00016,Scholarship Guidelines 2026 - Bangladesh,contract,Monitoring and Evaluation,ar,9,630,y.saleh,2025-09-11,indexed,32,false,internal
+DOC-00017,Quarterly Progress Report 2025 - Global,dataset,Programmes,en,180,30240,r.dubois,2025-08-15,indexed,495,false,public
+DOC-00018,Baseline Survey 2024 - Kenya,report,Communications,ar,97,9506,y.saleh,2025-04-01,indexed,373,false,restricted
+DOC-00019,Board Minutes 2025 - Kenya,presentation,Procurement,en,228,40128,k.thapa,2025-10-01,indexed,631,false,internal
+DOC-00020,Quarterly Progress Report 2024 - East Africa,policy,Finance,ar,33,3333,n.aziz,2025-08-11,indexed,81,false,restricted
+DOC-00021,HR Policy 2024 - Sudan,report,Monitoring and Evaluation,en,78,7410,m.haddara,2025-06-09,indexed,223,true,internal
+DOC-00022,Board Minutes 2026 - Qatar,contract,Programmes,en,19,1444,n.aziz,2025-11-13,indexed,70,false,internal
+DOC-00023,Risk Register 2026 - Global,minutes,IT,ar,171,22059,p.fernandes,2026-03-09,queued,0,false,internal
+DOC-00024,Procurement Guidelines 2026 - Bangladesh,minutes,IT,ar,239,25573,l.osman,2026-05-09,indexed,619,false,internal
+DOC-00025,Baseline Survey 2025 - Morocco,presentation,Monitoring and Evaluation,fr,177,7080,t.okeke,2026-02-08,indexed,554,false,internal
+DOC-00026,Vendor Contract 2026 - Qatar,proposal,Procurement,en,267,37647,r.dubois,2026-01-08,indexed,768,false,restricted
+DOC-00027,Programme Evaluation 2025 - Kenya,presentation,Executive Office,en,219,20148,s.khalil,2026-08-24,indexed,720,false,restricted
+DOC-00028,Grant Proposal 2025 - Morocco,minutes,HR,en,183,14457,a.rahman,2025-11-24,indexed,529,false,public
+DOC-00029,Board Minutes 2026 - Morocco,dataset,Legal,en,125,6875,j.mwangi,2025-08-24,indexed,300,false,internal
+DOC-00030,Monitoring Framework 2024 - Morocco,presentation,Programmes,en,106,18762,r.dubois,2026-08-20,indexed,297,false,internal
+DOC-00031,Annual Report 2024 - Qatar,policy,HR,ar,68,5984,p.fernandes,2026-02-25,skipped,0,false,internal
+DOC-00032,Field Assessment 2025 - East Africa,presentation,Communications,en,199,30049,h.almansoori,2026-04-25,indexed,581,true,public
+DOC-00033,HR Policy 2025 - Qatar,dataset,HR,en,266,16758,a.rahman,2025-02-27,indexed,927,true,public
+DOC-00034,Baseline Survey 2024 - Sudan,contract,Legal,ar,138,15042,t.okeke,2025-03-30,failed,0,false,public
+DOC-00035,Teacher Handbook 2024 - MENA Region,dataset,Executive Office,en,215,21070,k.thapa,2025-02-16,queued,0,false,public
+DOC-00036,Partnership Agreement 2026 - Nepal,policy,Monitoring and Evaluation,en,59,2773,n.aziz,2025-02-20,indexed,186,false,internal
+DOC-00037,Monitoring Framework 2024 - Jordan,presentation,Programmes,en,97,16199,n.aziz,2026-01-12,indexed,300,false,internal
+DOC-00038,Teacher Handbook 2026 - Jordan,minutes,IT,en,194,30264,t.okeke,2026-02-09,failed,0,false,internal
+DOC-00039,Training Manual 2025 - Morocco,contract,Executive Office,en,279,45198,y.saleh,2025-11-19,indexed,626,true,restricted
+DOC-00040,Procurement Guidelines 2024 - Bangladesh,proposal,Finance,ar,4,664,n.aziz,2025-02-17,indexed,12,false,internal
+DOC-00041,Risk Register 2024 - Jordan,contract,HR,en,177,13983,n.aziz,2025-02-18,failed,0,false,restricted
+DOC-00042,Grant Proposal 2026 - Morocco,minutes,HR,en,65,3640,j.mwangi,2026-03-16,failed,0,false,internal
+DOC-00043,Data Protection Policy 2026 - Bangladesh,manual,Executive Office,ar,197,21079,y.saleh,2026-03-06,indexed,462,true,restricted
+DOC-00044,Scholarship Guidelines 2025 - Jordan,minutes,Executive Office,en,254,20066,k.thapa,2025-07-16,indexed,967,false,internal
+DOC-00045,Programme Evaluation 2025 - Qatar,contract,IT,en,244,25376,m.haddara,2025-03-16,indexed,561,false,public
+DOC-00046,Training Manual 2025 - East Africa,report,HR,en,241,26751,p.fernandes,2026-09-03,failed,0,false,public
+DOC-00047,Vendor Contract 2024 - Morocco,dataset,Procurement,en,20,1800,k.thapa,2025-11-19,indexed,57,false,internal
+DOC-00048,Monitoring Framework 2025 - Bangladesh,proposal,Programmes,ar,132,23364,h.almansoori,2025-05-19,indexed,320,false,internal
+DOC-00049,Procurement Guidelines 2024 - Lebanon,manual,Communications,en,60,3600,m.haddara,2026-04-29,indexed,201,true,public
+DOC-00050,Monitoring Framework 2026 - Sudan,proposal,Legal,en,224,21504,r.dubois,2025-11-07,indexed,673,true,public
+DOC-00051,Teacher Handbook 2024 - Global,manual,IT,en,181,29503,a.rahman,2026-06-18,indexed,600,false,internal
+DOC-00052,Scholarship Guidelines 2025 - Lebanon,minutes,Monitoring and Evaluation,en,204,10608,p.fernandes,2025-04-22,indexed,452,false,restricted
+DOC-00053,Quarterly Progress Report 2025 - South Asia,proposal,Programmes,ar,13,663,m.haddara,2025-03-11,indexed,34,false,restricted
+DOC-00054,Risk Register 2025 - Jordan,policy,Communications,ar,205,16810,h.almansoori,2026-01-24,indexed,609,false,restricted
+DOC-00055,Partnership Agreement 2024 - Kenya,proposal,Programmes,ar,90,9630,n.aziz,2025-02-16,indexed,222,true,public
+DOC-00056,Quarterly Progress Report 2024 - Nepal,report,Monitoring and Evaluation,en,69,11178,n.aziz,2026-05-22,failed,0,false,internal
+DOC-00057,Partnership Agreement 2025 - Sudan,proposal,Procurement,ar,136,7208,s.khalil,2026-07-24,indexed,378,false,internal
+DOC-00058,Risk Register 2024 - Kenya,dataset,HR,en,155,7285,h.almansoori,2025-09-05,indexed,352,false,public
+DOC-00059,Scholarship Guidelines 2025 - Qatar,proposal,Procurement,en,150,5700,a.rahman,2025-04-28,indexed,396,false,internal
+DOC-00060,Field Assessment 2026 - Qatar,proposal,Procurement,en,8,1352,k.thapa,2025-10-13,indexed,30,false,internal
+DOC-00061,Budget Summary 2026 - East Africa,policy,Programmes,en,48,2784,t.okeke,2026-04-23,indexed,189,false,internal
+DOC-00062,Audit Findings 2024 - Nepal,minutes,Executive Office,en,167,17869,t.okeke,2025-08-13,indexed,595,false,internal
+DOC-00063,Data Protection Policy 2025 - Kenya,minutes,HR,ar,276,31188,s.khalil,2026-03-25,indexed,955,false,public
+DOC-00064,Monitoring Framework 2025 - Sudan,presentation,Monitoring and Evaluation,en,104,14560,s.khalil,2026-06-30,indexed,401,false,internal
+DOC-00065,Vendor Contract 2025 - Kenya,manual,Monitoring and Evaluation,en,132,15444,j.mwangi,2025-04-03,indexed,428,true,public
+DOC-00066,Baseline Survey 2026 - Morocco,contract,Finance,fr,54,4752,s.khalil,2026-02-05,indexed,186,false,public
+DOC-00067,Procurement Guidelines 2024 - South Asia,minutes,Communications,en,65,8840,r.dubois,2025-04-26,indexed,206,false,restricted
+DOC-00068,Security Plan 2026 - Kenya,contract,Finance,en,46,3496,a.rahman,2025-08-07,indexed,112,false,internal
+DOC-00069,Annual Report 2024 - Global,contract,HR,en,180,19980,p.fernandes,2025-12-24,queued,0,false,restricted
+DOC-00070,Monitoring Framework 2025 - MENA Region,proposal,HR,en,206,31518,y.saleh,2026-07-09,indexed,689,false,public
+DOC-00071,Annual Report 2024 - Nepal,minutes,Finance,en,111,8103,s.khalil,2025-06-09,indexed,366,true,internal
+DOC-00072,Partnership Agreement 2026 - Bangladesh,proposal,Communications,en,200,16600,j.mwangi,2025-05-01,indexed,556,false,restricted
+DOC-00073,Security Plan 2024 - Kenya,proposal,Legal,ar,78,8268,n.aziz,2025-09-13,indexed,314,false,internal
+DOC-00074,Audit Findings 2025 - Nepal,contract,Communications,en,165,6765,s.khalil,2026-01-01,indexed,653,false,restricted
+DOC-00075,Baseline Survey 2025 - Kenya,report,IT,en,16,896,k.thapa,2026-03-04,skipped,0,true,public
+DOC-00076,Quarterly Progress Report 2024 - Bangladesh,dataset,Programmes,en,158,15958,s.khalil,2026-08-20,indexed,497,false,internal
+DOC-00077,Quarterly Progress Report 2026 - Global,minutes,Communications,en,220,22440,a.rahman,2025-08-03,indexed,692,false,public
+DOC-00078,Budget Summary 2025 - Global,report,Monitoring and Evaluation,ar,109,4142,j.mwangi,2026-01-23,indexed,372,false,internal
+DOC-00079,Teacher Handbook 2026 - South Asia,policy,Legal,fr,58,7888,h.almansoori,2025-07-20,indexed,186,false,internal
+DOC-00080,Quarterly Progress Report 2026 - Jordan,minutes,Finance,en,259,31080,p.fernandes,2026-06-12,indexed,766,false,restricted
+DOC-00081,Scholarship Guidelines 2025 - Global,report,IT,en,148,26640,h.almansoori,2025-09-28,indexed,472,false,internal
+DOC-00082,Board Minutes 2026 - Qatar,presentation,Monitoring and Evaluation,en,122,14762,j.mwangi,2026-06-16,indexed,362,false,public
+DOC-00083,Vendor Contract 2024 - MENA Region,contract,IT,ar,127,19431,t.okeke,2026-04-14,indexed,287,true,public
+DOC-00084,Partnership Agreement 2024 - South Asia,dataset,Communications,ar,63,2772,r.dubois,2026-05-24,indexed,147,false,internal
+DOC-00085,Quarterly Progress Report 2024 - Kenya,proposal,Communications,fr,122,15372,r.dubois,2026-09-06,indexed,319,false,restricted
+DOC-00086,Training Manual 2024 - Morocco,dataset,IT,en,29,4872,t.okeke,2026-02-08,indexed,81,false,restricted
+DOC-00087,Procurement Guidelines 2026 - Qatar,dataset,Programmes,ar,254,19050,h.almansoori,2025-06-11,indexed,850,true,restricted
+DOC-00088,Budget Summary 2026 - MENA Region,report,Executive Office,en,263,47077,t.okeke,2025-01-28,indexed,664,false,restricted
+DOC-00089,Partnership Agreement 2024 - MENA Region,minutes,Legal,en,146,8176,y.saleh,2025-06-04,failed,0,false,restricted
+DOC-00090,Security Plan 2025 - Kenya,minutes,Monitoring and Evaluation,ar,198,14850,s.khalil,2026-02-25,indexed,758,false,internal
+DOC-00091,Scholarship Guidelines 2026 - Global,report,IT,ar,102,17340,h.almansoori,2026-08-28,indexed,290,false,public
+DOC-00092,Vendor Contract 2026 - Jordan,minutes,Communications,en,27,4428,r.dubois,2026-03-15,indexed,97,false,public
+DOC-00093,Teacher Handbook 2025 - Lebanon,contract,Legal,en,206,18128,j.mwangi,2026-08-23,indexed,751,false,internal
+DOC-00094,Programme Evaluation 2026 - Kenya,policy,Procurement,fr,109,4578,a.rahman,2026-06-10,indexed,361,false,internal
+DOC-00095,Annual Report 2024 - Sudan,proposal,Legal,en,195,9360,r.dubois,2026-09-11,indexed,787,false,internal
+DOC-00096,Teacher Handbook 2026 - East Africa,manual,Programmes,fr,258,40764,n.aziz,2025-05-23,skipped,0,false,internal
+DOC-00097,Risk Register 2026 - Jordan,minutes,Communications,en,142,12354,l.osman,2025-10-27,indexed,361,false,restricted
+DOC-00098,Field Assessment 2025 - Kenya,proposal,HR,fr,177,9912,y.saleh,2026-07-24,indexed,668,false,restricted
+DOC-00099,Training Manual 2025 - Morocco,policy,Monitoring and Evaluation,en,104,16016,a.rahman,2025-01-06,indexed,245,true,internal
+DOC-00100,Board Minutes 2024 - Sudan,manual,Communications,ar,125,19875,y.saleh,2025-02-17,indexed,446,false,restricted
+DOC-00101,Scholarship Guidelines 2026 - Sudan,dataset,HR,en,222,26196,t.okeke,2025-05-07,indexed,577,false,public
+DOC-00102,Teacher Handbook 2026 - Kenya,manual,Communications,ar,72,9864,a.rahman,2026-02-18,indexed,166,false,public
+DOC-00103,Partnership Agreement 2024 - Bangladesh,policy,Procurement,en,73,9125,p.fernandes,2025-09-24,indexed,170,false,internal
+DOC-00104,Board Minutes 2024 - South Asia,dataset,Communications,en,11,1793,l.osman,2025-12-30,indexed,24,true,internal
+DOC-00105,Monitoring Framework 2025 - MENA Region,policy,IT,en,165,13695,t.okeke,2025-01-09,indexed,456,false,public
+DOC-00106,Programme Evaluation 2026 - Bangladesh,dataset,IT,ar,59,2419,p.fernandes,2025-06-23,indexed,169,false,internal
+DOC-00107,Teacher Handbook 2025 - Nepal,contract,IT,fr,248,31496,m.haddara,2025-09-26,indexed,906,false,internal
+DOC-00108,Data Protection Policy 2025 - Kenya,policy,Executive Office,en,48,3264,m.haddara,2025-05-26,indexed,122,false,internal
+DOC-00109,Monitoring Framework 2024 - MENA Region,manual,Communications,fr,46,4554,n.aziz,2025-02-19,indexed,178,false,internal
+DOC-00110,Teacher Handbook 2026 - Jordan,minutes,Finance,en,198,10494,s.khalil,2025-11-06,skipped,0,false,internal
+DOC-00111,Programme Evaluation 2024 - MENA Region,manual,Finance,ar,4,244,s.khalil,2025-07-05,indexed,9,false,public
+DOC-00112,Monitoring Framework 2026 - Jordan,manual,Monitoring and Evaluation,en,179,21301,n.aziz,2026-06-02,indexed,561,false,restricted
+DOC-00113,Grant Proposal 2026 - Kenya,manual,HR,en,191,8595,r.dubois,2026-09-17,indexed,765,false,internal
+DOC-00114,Scholarship Guidelines 2025 - Lebanon,presentation,Procurement,ar,246,24108,y.saleh,2025-07-01,indexed,862,false,internal
+DOC-00115,Data Protection Policy 2025 - Kenya,dataset,Legal,en,254,31750,m.haddara,2026-02-06,indexed,682,true,public
+DOC-00116,Partnership Agreement 2026 - MENA Region,policy,Monitoring and Evaluation,en,129,14448,y.saleh,2025-03-03,indexed,390,false,internal
+DOC-00117,Risk Register 2024 - Sudan,dataset,Procurement,en,278,18348,y.saleh,2026-04-03,indexed,678,false,restricted
+DOC-00118,Audit Findings 2024 - Bangladesh,proposal,HR,ar,84,9912,s.khalil,2025-03-22,indexed,243,false,internal
+DOC-00119,Annual Report 2024 - Lebanon,minutes,Finance,ar,9,1152,p.fernandes,2025-06-15,indexed,35,false,internal
+DOC-00120,Budget Summary 2026 - Bangladesh,proposal,Procurement,fr,54,9180,p.fernandes,2025-08-21,indexed,191,false,internal
+DOC-00121,Scholarship Guidelines 2025 - Qatar,policy,Executive Office,fr,50,1800,j.mwangi,2025-07-14,indexed,121,false,internal
+DOC-00122,Baseline Survey 2024 - MENA Region,manual,Procurement,ar,170,22950,j.mwangi,2025-05-03,indexed,544,false,internal
+DOC-00123,HR Policy 2026 - MENA Region,minutes,Monitoring and Evaluation,en,124,17608,m.haddara,2025-02-18,indexed,416,true,internal
+DOC-00124,Vendor Contract 2024 - Morocco,policy,IT,en,61,6954,j.mwangi,2025-04-25,indexed,246,false,public
+DOC-00125,Partnership Agreement 2026 - Sudan,presentation,HR,ar,98,4802,j.mwangi,2026-05-23,indexed,223,false,public
+DOC-00126,Data Protection Policy 2026 - East Africa,proposal,HR,ar,189,8316,h.almansoori,2025-04-30,queued,0,false,internal
+DOC-00127,Baseline Survey 2026 - Qatar,dataset,HR,en,140,15120,h.almansoori,2026-03-23,indexed,463,true,internal
+DOC-00128,Teacher Handbook 2026 - Nepal,proposal,Executive Office,en,132,10692,a.rahman,2026-06-19,indexed,336,false,restricted
+DOC-00129,Training Manual 2026 - Sudan,manual,Finance,en,130,21320,t.okeke,2026-08-29,indexed,431,false,internal
+DOC-00130,HR Policy 2026 - Lebanon,dataset,HR,en,82,9020,a.rahman,2026-05-31,indexed,321,false,internal
+DOC-00131,Budget Summary 2026 - South Asia,contract,Executive Office,en,264,39336,s.khalil,2025-07-28,indexed,1063,false,restricted
+DOC-00132,Grant Proposal 2025 - Qatar,proposal,Programmes,ar,43,2451,p.fernandes,2026-04-03,indexed,115,false,restricted
+DOC-00133,Teacher Handbook 2024 - Lebanon,contract,Finance,ar,152,26448,r.dubois,2025-12-10,indexed,541,false,restricted
+DOC-00134,Grant Proposal 2026 - Bangladesh,presentation,IT,ar,274,29866,s.khalil,2026-03-27,skipped,0,true,restricted
+DOC-00135,Procurement Guidelines 2025 - South Asia,dataset,Communications,en,34,5610,h.almansoori,2026-08-01,indexed,123,false,internal
+DOC-00136,Monitoring Framework 2024 - Morocco,contract,Communications,en,98,11172,h.almansoori,2025-07-02,indexed,330,false,internal
+DOC-00137,Scholarship Guidelines 2024 - Sudan,policy,Legal,ar,266,28196,k.thapa,2025-04-01,indexed,695,true,internal
+DOC-00138,HR Policy 2026 - Morocco,policy,Legal,en,145,5075,m.haddara,2025-10-18,indexed,381,false,internal
+DOC-00139,Audit Findings 2025 - Kenya,report,Executive Office,ar,245,11270,n.aziz,2025-06-26,indexed,626,false,internal
+DOC-00140,Quarterly Progress Report 2026 - East Africa,contract,Communications,ar,258,37152,k.thapa,2025-06-23,indexed,1015,false,restricted
+DOC-00141,Partnership Agreement 2024 - Sudan,manual,HR,en,114,18582,n.aziz,2025-01-14,indexed,455,false,public
+DOC-00142,Board Minutes 2025 - Lebanon,presentation,Legal,ar,22,1980,h.almansoori,2026-09-17,queued,0,false,internal
+DOC-00143,Audit Findings 2024 - Global,manual,HR,en,20,2200,l.osman,2025-10-19,indexed,69,false,internal
+DOC-00144,Data Protection Policy 2024 - Bangladesh,manual,IT,en,9,918,t.okeke,2025-07-14,indexed,30,false,internal
+DOC-00145,Risk Register 2024 - Jordan,minutes,IT,en,103,12051,p.fernandes,2025-03-05,indexed,324,false,restricted
+DOC-00146,Board Minutes 2025 - Global,minutes,Legal,en,196,29596,r.dubois,2025-05-07,indexed,615,false,internal
+DOC-00147,Baseline Survey 2025 - Sudan,contract,Executive Office,ar,44,4884,h.almansoori,2025-02-06,indexed,128,false,restricted
+DOC-00148,Monitoring Framework 2024 - Sudan,dataset,HR,ar,157,18055,r.dubois,2025-07-08,indexed,574,false,public
+DOC-00149,HR Policy 2025 - Global,policy,HR,ar,128,4480,n.aziz,2026-07-19,indexed,344,false,public
+DOC-00150,Monitoring Framework 2026 - Global,manual,Executive Office,ar,189,11907,s.khalil,2026-06-03,indexed,614,true,restricted
+DOC-00151,Board Minutes 2025 - East Africa,policy,Procurement,fr,224,9408,p.fernandes,2026-03-31,indexed,551,false,internal
+DOC-00152,Annual Report 2026 - Qatar,policy,Procurement,ar,30,2520,n.aziz,2026-05-09,indexed,117,false,internal
+DOC-00153,Audit Findings 2025 - Lebanon,policy,Procurement,fr,57,5529,j.mwangi,2026-09-06,indexed,221,false,public
+DOC-00154,Risk Register 2024 - South Asia,minutes,Programmes,en,142,8662,p.fernandes,2026-05-25,indexed,404,false,public
+DOC-00155,Vendor Contract 2025 - Jordan,minutes,Communications,en,275,15950,t.okeke,2025-06-24,indexed,681,false,public
+DOC-00156,Monitoring Framework 2024 - Kenya,manual,Procurement,fr,204,13872,m.haddara,2026-06-20,indexed,821,false,restricted
+DOC-00157,Scholarship Guidelines 2026 - Bangladesh,proposal,Legal,en,83,7885,n.aziz,2025-01-11,indexed,182,false,internal
+DOC-00158,Field Assessment 2026 - Bangladesh,minutes,Legal,en,210,23100,l.osman,2026-07-03,indexed,462,false,public
+DOC-00159,Security Plan 2024 - Kenya,report,Monitoring and Evaluation,en,251,29367,s.khalil,2026-01-05,indexed,574,true,internal
+DOC-00160,Programme Evaluation 2026 - Qatar,report,Executive Office,en,203,35322,s.khalil,2025-05-30,indexed,751,false,internal
+DOC-00161,Monitoring Framework 2025 - Qatar,minutes,Executive Office,ar,1,51,j.mwangi,2026-06-06,indexed,3,false,internal
+DOC-00162,Field Assessment 2025 - Global,report,Procurement,en,138,19458,s.khalil,2026-06-23,failed,0,false,internal
+DOC-00163,Risk Register 2025 - Morocco,presentation,Monitoring and Evaluation,fr,36,3204,s.khalil,2025-09-28,indexed,96,false,public
+DOC-00164,Procurement Guidelines 2024 - Nepal,policy,Finance,en,52,7904,n.aziz,2025-11-20,indexed,183,false,restricted
+DOC-00165,Training Manual 2024 - Qatar,report,Finance,ar,14,826,l.osman,2025-10-23,indexed,56,false,restricted
+DOC-00166,Board Minutes 2024 - Sudan,contract,Executive Office,fr,106,11130,h.almansoori,2025-08-05,indexed,258,false,internal
+DOC-00167,Budget Summary 2024 - Sudan,minutes,HR,ar,91,8008,l.osman,2026-05-31,indexed,262,false,internal
+DOC-00168,Audit Findings 2026 - South Asia,manual,Procurement,en,24,864,k.thapa,2026-04-07,indexed,85,false,internal
+DOC-00169,Annual Report 2025 - Jordan,dataset,Finance,ar,260,22620,m.haddara,2025-03-04,indexed,622,false,restricted
+DOC-00170,Training Manual 2025 - Jordan,contract,Monitoring and Evaluation,en,195,18525,n.aziz,2025-01-07,indexed,681,true,internal
+DOC-00171,Budget Summary 2026 - Qatar,policy,Communications,ar,18,1746,j.mwangi,2025-05-07,indexed,61,false,public
+DOC-00172,Quarterly Progress Report 2025 - Qatar,minutes,HR,en,260,25480,r.dubois,2025-03-02,indexed,735,false,internal
+DOC-00173,Baseline Survey 2026 - Qatar,dataset,Programmes,en,181,11765,j.mwangi,2025-12-18,indexed,588,false,internal
+DOC-00174,Field Assessment 2024 - East Africa,contract,Finance,ar,33,5412,l.osman,2025-11-17,indexed,96,false,public
+DOC-00175,Vendor Contract 2025 - Nepal,presentation,Legal,ar,67,4824,y.saleh,2026-04-16,indexed,183,false,internal
+DOC-00176,Programme Evaluation 2025 - Qatar,dataset,Finance,en,260,13260,n.aziz,2025-12-31,indexed,1055,false,internal
+DOC-00177,Teacher Handbook 2024 - MENA Region,dataset,IT,fr,188,16732,y.saleh,2025-01-25,indexed,546,false,restricted
+DOC-00178,Grant Proposal 2024 - Sudan,report,Executive Office,ar,191,31897,j.mwangi,2025-06-16,indexed,436,false,internal
+DOC-00179,Procurement Guidelines 2026 - Bangladesh,dataset,Finance,en,108,15984,m.haddara,2025-01-21,failed,0,false,internal
+DOC-00180,Teacher Handbook 2024 - Jordan,proposal,Legal,en,172,10492,n.aziz,2025-09-10,queued,0,false,restricted
+DOC-00181,Procurement Guidelines 2024 - Global,minutes,Communications,ar,12,516,j.mwangi,2025-11-10,indexed,33,false,internal
+DOC-00182,Field Assessment 2024 - South Asia,minutes,Finance,en,263,19725,k.thapa,2026-04-13,indexed,941,false,internal
+DOC-00183,Annual Report 2024 - MENA Region,report,Monitoring and Evaluation,en,20,1280,p.fernandes,2026-06-11,indexed,64,true,restricted
+DOC-00184,Scholarship Guidelines 2025 - MENA Region,manual,Procurement,ar,256,38912,n.aziz,2025-06-25,indexed,723,false,restricted
+DOC-00185,Risk Register 2026 - Jordan,presentation,Legal,en,133,6916,y.saleh,2025-06-18,indexed,344,true,internal
+DOC-00186,Board Minutes 2026 - Kenya,minutes,Programmes,ar,202,32926,r.dubois,2025-05-03,indexed,530,false,internal
+DOC-00187,Training Manual 2026 - Bangladesh,report,Programmes,en,102,9180,s.khalil,2025-05-13,indexed,414,false,restricted
+DOC-00188,Quarterly Progress Report 2026 - Lebanon,dataset,Executive Office,ar,94,11750,l.osman,2025-04-01,indexed,294,false,public
+DOC-00189,Security Plan 2026 - Nepal,presentation,Procurement,ar,214,10700,s.khalil,2026-05-14,indexed,723,false,public
+DOC-00190,Audit Findings 2026 - Jordan,dataset,Monitoring and Evaluation,en,194,20952,n.aziz,2026-04-22,indexed,792,false,restricted
+DOC-00191,Grant Proposal 2025 - Kenya,minutes,Legal,fr,161,12558,t.okeke,2026-03-06,queued,0,false,internal
+DOC-00192,Audit Findings 2025 - MENA Region,minutes,HR,en,173,23528,s.khalil,2026-08-21,indexed,606,false,internal
+DOC-00193,Risk Register 2024 - Qatar,contract,Programmes,en,142,23430,s.khalil,2026-02-28,indexed,471,true,internal
+DOC-00194,Teacher Handbook 2025 - Morocco,policy,Procurement,ar,183,17751,p.fernandes,2025-11-14,indexed,700,true,internal
+DOC-00195,Budget Summary 2024 - Bangladesh,minutes,Finance,fr,221,22100,a.rahman,2025-10-23,indexed,881,false,internal
+DOC-00196,Security Plan 2026 - Global,proposal,Communications,ar,267,11748,j.mwangi,2026-07-23,indexed,909,true,public
+DOC-00197,Annual Report 2025 - Bangladesh,dataset,Executive Office,ar,95,9595,l.osman,2025-09-07,indexed,295,false,restricted
+DOC-00198,Risk Register 2024 - Kenya,policy,Programmes,en,200,24600,t.okeke,2026-05-31,indexed,505,false,internal
+DOC-00199,Security Plan 2024 - Jordan,manual,Executive Office,en,61,7503,m.haddara,2026-06-13,indexed,140,false,internal
+DOC-00200,Budget Summary 2024 - Qatar,contract,Legal,ar,116,15196,l.osman,2026-05-19,indexed,302,false,public
+DOC-00201,Risk Register 2026 - Lebanon,policy,Executive Office,en,271,24932,k.thapa,2025-07-20,indexed,865,false,public
+DOC-00202,Programme Evaluation 2024 - MENA Region,dataset,Finance,ar,236,37524,n.aziz,2026-04-20,indexed,611,false,internal
+DOC-00203,Procurement Guidelines 2026 - Sudan,report,Monitoring and Evaluation,en,138,15870,s.khalil,2026-05-19,indexed,347,false,restricted
+DOC-00204,Risk Register 2025 - South Asia,policy,Communications,ar,117,20241,p.fernandes,2026-02-19,indexed,277,false,public
+DOC-00205,Procurement Guidelines 2024 - Jordan,policy,Programmes,ar,26,2496,r.dubois,2025-10-20,indexed,73,false,internal
+DOC-00206,Data Protection Policy 2025 - South Asia,minutes,Programmes,en,54,6966,n.aziz,2025-06-19,indexed,200,false,internal
+DOC-00207,Partnership Agreement 2024 - South Asia,report,Procurement,ar,171,9576,k.thapa,2026-04-15,indexed,547,false,internal
+DOC-00208,Vendor Contract 2024 - Qatar,dataset,Executive Office,en,183,20679,a.rahman,2025-11-26,skipped,0,true,internal
+DOC-00209,Scholarship Guidelines 2026 - Sudan,manual,Programmes,en,100,5900,t.okeke,2026-08-10,indexed,317,false,restricted
+DOC-00210,Grant Proposal 2025 - Morocco,minutes,Procurement,ar,25,3825,k.thapa,2026-08-04,indexed,63,false,internal
+DOC-00211,Data Protection Policy 2025 - South Asia,report,Programmes,en,30,2970,p.fernandes,2025-09-07,indexed,115,false,public
+DOC-00212,Scholarship Guidelines 2026 - Morocco,presentation,Procurement,en,256,26368,t.okeke,2025-06-15,indexed,879,false,public
+DOC-00213,Teacher Handbook 2024 - Morocco,manual,Monitoring and Evaluation,ar,234,27144,h.almansoori,2026-04-02,indexed,514,false,public
+DOC-00214,Training Manual 2024 - East Africa,manual,Legal,en,26,2470,a.rahman,2025-06-18,indexed,58,false,internal
+DOC-00215,Field Assessment 2026 - Jordan,report,IT,ar,121,19481,m.haddara,2025-03-10,indexed,471,false,public
+DOC-00216,Partnership Agreement 2024 - MENA Region,manual,Legal,ar,131,15196,r.dubois,2025-06-24,failed,0,false,internal
+DOC-00217,Procurement Guidelines 2025 - Qatar,contract,Procurement,en,8,896,y.saleh,2026-02-25,indexed,26,false,restricted
+DOC-00218,Audit Findings 2024 - East Africa,presentation,IT,en,202,25250,s.khalil,2026-01-24,indexed,740,true,internal
+DOC-00219,Vendor Contract 2025 - Bangladesh,manual,Executive Office,fr,59,2478,s.khalil,2025-12-22,indexed,173,false,public
+DOC-00220,Grant Proposal 2025 - Qatar,manual,IT,en,162,12960,a.rahman,2026-01-25,indexed,564,false,public
+DOC-00221,Budget Summary 2025 - Kenya,dataset,HR,ar,56,5376,p.fernandes,2025-09-13,indexed,180,false,internal
+DOC-00222,Baseline Survey 2025 - Kenya,minutes,Monitoring and Evaluation,en,64,3584,n.aziz,2026-05-07,indexed,256,false,public
+DOC-00223,Programme Evaluation 2024 - South Asia,presentation,Legal,en,240,10320,r.dubois,2025-06-24,indexed,677,true,internal
+DOC-00224,Budget Summary 2025 - Lebanon,manual,HR,en,141,10011,y.saleh,2026-01-05,failed,0,false,internal
+DOC-00225,Vendor Contract 2025 - East Africa,policy,Executive Office,en,143,19162,y.saleh,2026-06-06,indexed,324,false,restricted
+DOC-00226,Field Assessment 2025 - Global,manual,Communications,ar,110,10450,j.mwangi,2026-04-12,indexed,372,false,public
+DOC-00227,Security Plan 2025 - Bangladesh,dataset,Procurement,ar,109,3924,h.almansoori,2025-06-08,indexed,365,true,public
+DOC-00228,Partnership Agreement 2024 - Bangladesh,presentation,Procurement,en,56,9408,t.okeke,2025-12-07,indexed,195,false,internal
+DOC-00229,Annual Report 2025 - Jordan,minutes,Finance,fr,124,4712,r.dubois,2026-05-25,indexed,483,true,public
+DOC-00230,Programme Evaluation 2024 - Kenya,manual,Procurement,en,18,2340,k.thapa,2025-11-07,indexed,68,false,internal
+DOC-00231,Field Assessment 2026 - Jordan,presentation,Legal,ar,205,11070,y.saleh,2026-03-16,indexed,679,false,internal
+DOC-00232,Training Manual 2026 - Qatar,presentation,Finance,en,67,4489,m.haddara,2025-12-19,indexed,274,false,restricted
+DOC-00233,Annual Report 2025 - Qatar,proposal,Communications,fr,92,6164,a.rahman,2025-06-26,indexed,210,false,internal
+DOC-00234,Annual Report 2025 - Bangladesh,policy,Communications,en,44,5148,s.khalil,2025-11-10,failed,0,false,restricted
+DOC-00235,Programme Evaluation 2026 - South Asia,proposal,IT,fr,124,15128,r.dubois,2025-04-26,indexed,363,false,internal
+DOC-00236,Training Manual 2024 - MENA Region,manual,Programmes,ar,19,1653,k.thapa,2026-08-18,indexed,75,false,internal
+DOC-00237,Monitoring Framework 2025 - Bangladesh,contract,Monitoring and Evaluation,en,237,41475,m.haddara,2026-07-02,indexed,969,true,public
+DOC-00238,Quarterly Progress Report 2025 - Bangladesh,proposal,IT,en,54,8154,h.almansoori,2025-07-11,indexed,189,false,internal
+DOC-00239,Quarterly Progress Report 2025 - Qatar,manual,Programmes,ar,17,2125,t.okeke,2026-06-08,indexed,49,false,internal
+DOC-00240,Programme Evaluation 2024 - MENA Region,dataset,Monitoring and Evaluation,fr,86,11782,t.okeke,2026-05-21,indexed,292,true,public
+DOC-00241,Grant Proposal 2024 - Global,manual,Finance,fr,247,12103,r.dubois,2026-06-30,indexed,978,false,internal
+DOC-00242,Budget Summary 2025 - East Africa,proposal,Monitoring and Evaluation,ar,240,40080,n.aziz,2025-03-03,indexed,664,false,restricted
+DOC-00243,Data Protection Policy 2024 - Lebanon,proposal,Programmes,fr,231,31416,a.rahman,2026-01-05,indexed,687,false,public
+DOC-00244,Data Protection Policy 2026 - Morocco,report,Monitoring and Evaluation,ar,124,21452,n.aziz,2025-07-20,indexed,429,false,internal
+DOC-00245,Data Protection Policy 2026 - MENA Region,policy,HR,en,91,4550,l.osman,2026-03-03,failed,0,false,internal
+DOC-00246,Budget Summary 2024 - Lebanon,report,Procurement,en,136,23936,m.haddara,2025-11-14,indexed,449,false,public
+DOC-00247,Programme Evaluation 2025 - Lebanon,proposal,Finance,en,1,92,n.aziz,2025-12-25,indexed,2,false,public
+DOC-00248,Programme Evaluation 2025 - Morocco,contract,Procurement,ar,225,12375,h.almansoori,2025-01-18,indexed,818,false,internal
+DOC-00249,Field Assessment 2025 - Nepal,policy,Finance,en,26,2678,y.saleh,2026-04-29,indexed,67,false,public
+DOC-00250,HR Policy 2024 - Sudan,report,Finance,en,227,17252,r.dubois,2025-06-22,indexed,816,false,internal
+DOC-00251,Training Manual 2024 - Nepal,proposal,IT,en,55,2530,j.mwangi,2026-04-16,indexed,149,false,internal
+DOC-00252,Data Protection Policy 2025 - East Africa,minutes,Communications,fr,220,13860,p.fernandes,2026-02-25,indexed,860,false,public
+DOC-00253,Board Minutes 2024 - East Africa,proposal,Finance,ar,119,20825,a.rahman,2025-01-08,indexed,276,false,restricted
+DOC-00254,Quarterly Progress Report 2025 - Global,policy,Communications,en,132,7656,j.mwangi,2025-12-06,indexed,524,false,internal
+DOC-00255,Procurement Guidelines 2025 - Sudan,minutes,Executive Office,fr,232,23200,l.osman,2026-01-19,indexed,757,false,public
+DOC-00256,Field Assessment 2025 - Nepal,presentation,Legal,fr,104,10400,h.almansoori,2026-06-25,indexed,387,false,internal
+DOC-00257,Security Plan 2026 - Kenya,minutes,Programmes,ar,172,12728,h.almansoori,2026-05-23,indexed,704,false,internal
+DOC-00258,Security Plan 2026 - Morocco,report,Finance,en,13,1534,r.dubois,2026-06-11,indexed,43,false,internal
+DOC-00259,Security Plan 2026 - Nepal,contract,Executive Office,ar,176,16016,a.rahman,2026-04-14,indexed,594,false,restricted
+DOC-00260,Board Minutes 2024 - Bangladesh,policy,Procurement,en,156,23244,l.osman,2026-02-04,indexed,407,false,internal
+DOC-00261,Procurement Guidelines 2025 - South Asia,contract,Programmes,ar,254,34290,a.rahman,2025-03-06,indexed,781,true,restricted
+DOC-00262,Field Assessment 2026 - East Africa,presentation,Programmes,en,180,31860,p.fernandes,2026-02-28,indexed,686,false,internal
+DOC-00263,Grant Proposal 2024 - Jordan,report,Communications,en,118,13806,p.fernandes,2026-07-18,indexed,469,false,internal
+DOC-00264,Audit Findings 2025 - Lebanon,policy,Finance,en,241,42416,h.almansoori,2026-02-09,failed,0,false,internal
+DOC-00265,Monitoring Framework 2026 - Nepal,contract,Legal,ar,244,33184,k.thapa,2025-03-04,skipped,0,false,internal
+DOC-00266,Training Manual 2026 - Global,policy,Executive Office,en,76,5016,s.khalil,2026-03-22,indexed,298,false,restricted
+DOC-00267,Quarterly Progress Report 2024 - East Africa,policy,HR,en,5,690,a.rahman,2025-05-17,indexed,17,true,internal
+DOC-00268,Quarterly Progress Report 2024 - Nepal,contract,IT,ar,262,41134,a.rahman,2026-08-19,indexed,678,false,internal
+DOC-00269,Training Manual 2026 - Lebanon,manual,Legal,fr,52,7644,y.saleh,2025-03-10,indexed,159,false,public
+DOC-00270,Baseline Survey 2025 - Global,minutes,HR,en,192,17856,k.thapa,2026-03-24,indexed,713,false,internal
+DOC-00271,Budget Summary 2025 - Kenya,policy,HR,en,268,41808,j.mwangi,2026-04-12,indexed,597,false,public
+DOC-00272,Quarterly Progress Report 2026 - Morocco,dataset,IT,fr,65,4940,l.osman,2025-08-27,failed,0,false,public
+DOC-00273,Monitoring Framework 2024 - Global,policy,Procurement,ar,97,14356,s.khalil,2025-07-31,indexed,391,false,internal
+DOC-00274,Procurement Guidelines 2026 - Nepal,proposal,HR,en,273,39858,m.haddara,2026-08-29,indexed,805,false,restricted
+DOC-00275,Teacher Handbook 2024 - Morocco,contract,Executive Office,ar,69,2760,a.rahman,2025-04-10,indexed,218,true,restricted
+DOC-00276,HR Policy 2024 - Nepal,presentation,Communications,en,25,3050,a.rahman,2026-04-24,indexed,61,false,restricted
+DOC-00277,Risk Register 2024 - Bangladesh,contract,Legal,ar,278,25576,s.khalil,2026-07-25,indexed,831,false,restricted
+DOC-00278,Partnership Agreement 2024 - South Asia,proposal,HR,en,140,12880,p.fernandes,2026-09-04,indexed,423,false,internal
+DOC-00279,Grant Proposal 2026 - Bangladesh,dataset,Executive Office,en,9,1458,s.khalil,2025-11-10,indexed,29,false,restricted
+DOC-00280,Quarterly Progress Report 2024 - Morocco,manual,IT,en,257,26728,m.haddara,2025-07-16,indexed,646,false,restricted
+DOC-00281,Security Plan 2024 - Jordan,minutes,Executive Office,ar,11,781,y.saleh,2025-08-27,indexed,37,false,restricted
+DOC-00282,Vendor Contract 2026 - Sudan,minutes,Programmes,en,198,19998,h.almansoori,2025-05-23,indexed,724,false,internal
+DOC-00283,Budget Summary 2024 - Jordan,proposal,Programmes,en,110,15070,k.thapa,2025-09-01,indexed,450,false,internal
+DOC-00284,Quarterly Progress Report 2026 - Morocco,manual,Finance,ar,157,17427,p.fernandes,2026-06-19,indexed,535,false,internal
+DOC-00285,Teacher Handbook 2025 - MENA Region,report,Communications,ar,56,2856,m.haddara,2026-08-08,indexed,138,true,internal
+DOC-00286,Security Plan 2026 - MENA Region,dataset,IT,en,37,5402,j.mwangi,2025-01-12,indexed,101,false,internal
+DOC-00287,Procurement Guidelines 2026 - Nepal,proposal,Monitoring and Evaluation,en,57,9006,s.khalil,2026-08-26,indexed,178,false,restricted
+DOC-00288,Teacher Handbook 2026 - East Africa,contract,HR,en,243,30618,s.khalil,2026-03-13,indexed,889,true,internal
+DOC-00289,HR Policy 2026 - Morocco,contract,Procurement,ar,269,12105,m.haddara,2025-02-12,indexed,710,false,public
+DOC-00290,Audit Findings 2024 - Global,manual,IT,en,79,7189,m.haddara,2026-02-03,skipped,0,false,internal
+DOC-00291,Security Plan 2025 - Kenya,report,Communications,en,201,20100,a.rahman,2026-08-10,indexed,573,false,internal
+DOC-00292,Baseline Survey 2024 - Qatar,policy,Programmes,en,177,13098,s.khalil,2025-08-19,failed,0,true,restricted
+DOC-00293,Security Plan 2025 - South Asia,minutes,Procurement,en,245,21560,l.osman,2025-10-27,indexed,778,true,internal
+DOC-00294,Teacher Handbook 2026 - Lebanon,minutes,Monitoring and Evaluation,ar,270,38070,m.haddara,2025-01-15,queued,0,false,internal
+DOC-00295,Field Assessment 2026 - Qatar,policy,Executive Office,ar,280,50400,a.rahman,2026-09-09,indexed,1094,false,public
+DOC-00296,Programme Evaluation 2024 - South Asia,policy,Executive Office,ar,84,5376,l.osman,2025-08-12,indexed,269,true,internal
+DOC-00297,Grant Proposal 2026 - Global,proposal,Finance,en,217,37975,y.saleh,2025-02-10,indexed,862,false,restricted
+DOC-00298,Training Manual 2025 - Bangladesh,minutes,IT,ar,20,1940,y.saleh,2025-03-09,indexed,66,true,internal
+DOC-00299,Training Manual 2024 - Sudan,contract,IT,en,148,23976,m.haddara,2025-04-27,indexed,380,false,public
+DOC-00300,Teacher Handbook 2024 - Nepal,dataset,Finance,en,7,1218,j.mwangi,2026-06-12,indexed,16,false,internal
+DOC-00301,Training Manual 2026 - Lebanon,proposal,Communications,ar,89,5874,k.thapa,2025-07-17,indexed,276,false,restricted
+DOC-00302,Vendor Contract 2024 - Jordan,dataset,Legal,en,272,47056,l.osman,2025-06-16,indexed,958,false,internal
+DOC-00303,Teacher Handbook 2026 - Nepal,manual,Executive Office,ar,279,35433,k.thapa,2025-07-27,failed,0,false,internal
+DOC-00304,Budget Summary 2024 - Jordan,minutes,Procurement,en,53,7208,t.okeke,2026-04-14,indexed,181,false,internal
+DOC-00305,Scholarship Guidelines 2025 - Bangladesh,minutes,Programmes,ar,116,13108,t.okeke,2025-06-10,indexed,465,false,public
+DOC-00306,Quarterly Progress Report 2024 - MENA Region,contract,HR,ar,217,25172,h.almansoori,2026-04-11,indexed,747,false,internal
+DOC-00307,Risk Register 2026 - Sudan,report,IT,en,160,8800,m.haddara,2026-08-19,indexed,554,false,internal
+DOC-00308,Grant Proposal 2025 - East Africa,report,Monitoring and Evaluation,en,39,6084,a.rahman,2026-01-28,indexed,150,false,restricted
+DOC-00309,Baseline Survey 2025 - Sudan,minutes,Monitoring and Evaluation,ar,219,14454,l.osman,2025-07-05,indexed,719,false,internal
+DOC-00310,Grant Proposal 2026 - Jordan,report,Finance,en,215,19995,y.saleh,2025-06-25,indexed,871,false,restricted
+DOC-00311,Security Plan 2026 - Lebanon,manual,Communications,en,117,11583,h.almansoori,2026-07-26,indexed,428,false,public
+DOC-00312,Teacher Handbook 2025 - Nepal,manual,Executive Office,fr,220,31240,m.haddara,2025-12-02,queued,0,false,restricted
+DOC-00313,Annual Report 2026 - Sudan,presentation,Communications,en,4,708,s.khalil,2025-11-23,failed,0,false,restricted
+DOC-00314,Scholarship Guidelines 2026 - East Africa,policy,HR,en,238,11662,s.khalil,2025-09-06,indexed,705,false,public
+DOC-00315,Monitoring Framework 2024 - Morocco,minutes,HR,en,237,27018,k.thapa,2025-11-23,indexed,541,false,internal
+DOC-00316,Field Assessment 2026 - Lebanon,proposal,Communications,en,155,25265,p.fernandes,2026-08-28,indexed,531,true,internal
+DOC-00317,Risk Register 2024 - South Asia,minutes,Procurement,en,99,11286,a.rahman,2025-08-09,queued,0,false,internal
+DOC-00318,Procurement Guidelines 2026 - South Asia,dataset,HR,ar,58,6148,s.khalil,2026-05-19,indexed,233,false,public
+DOC-00319,Grant Proposal 2026 - Morocco,proposal,IT,en,248,16120,h.almansoori,2026-03-08,indexed,654,false,restricted
+DOC-00320,Board Minutes 2025 - Morocco,manual,IT,en,61,2806,h.almansoori,2026-02-19,indexed,220,false,internal
+DOC-00321,Risk Register 2026 - Bangladesh,manual,Monitoring and Evaluation,ar,243,21870,h.almansoori,2025-06-20,failed,0,false,public
+DOC-00322,Annual Report 2026 - Morocco,presentation,Executive Office,en,14,1848,l.osman,2026-02-09,indexed,47,true,restricted
+DOC-00323,Quarterly Progress Report 2024 - Nepal,policy,IT,en,198,8118,l.osman,2025-09-08,indexed,730,false,restricted
+DOC-00324,Training Manual 2024 - Morocco,minutes,Communications,fr,185,21090,a.rahman,2026-06-04,indexed,568,false,public
+DOC-00325,Programme Evaluation 2025 - Lebanon,minutes,Communications,fr,40,3160,s.khalil,2026-03-12,indexed,160,false,restricted
+DOC-00326,Programme Evaluation 2024 - Jordan,presentation,Procurement,ar,169,15548,m.haddara,2025-04-04,failed,0,false,restricted
+DOC-00327,Annual Report 2026 - Morocco,minutes,Communications,ar,121,11253,k.thapa,2026-03-04,skipped,0,true,internal
+DOC-00328,HR Policy 2024 - South Asia,dataset,Legal,en,16,1792,p.fernandes,2025-03-16,indexed,42,false,internal
+DOC-00329,Risk Register 2024 - Jordan,policy,Procurement,en,218,24634,p.fernandes,2025-12-06,indexed,826,true,internal
+DOC-00330,Quarterly Progress Report 2025 - Jordan,policy,Communications,ar,209,31977,s.khalil,2025-10-29,queued,0,false,public
+DOC-00331,Annual Report 2024 - Morocco,proposal,Programmes,ar,240,39360,a.rahman,2025-08-13,indexed,896,false,internal
+DOC-00332,Audit Findings 2025 - Bangladesh,dataset,Legal,fr,270,45090,r.dubois,2026-08-28,indexed,859,false,restricted
+DOC-00333,Programme Evaluation 2024 - Bangladesh,presentation,IT,fr,253,29854,r.dubois,2025-11-08,queued,0,false,internal
+DOC-00334,Programme Evaluation 2024 - Morocco,policy,Finance,en,137,24660,k.thapa,2026-02-23,indexed,545,false,internal
+DOC-00335,Budget Summary 2025 - East Africa,proposal,Procurement,ar,175,25550,a.rahman,2026-02-21,indexed,678,true,internal
+DOC-00336,Procurement Guidelines 2025 - Bangladesh,proposal,Procurement,en,258,15480,a.rahman,2025-10-06,indexed,808,false,internal
+DOC-00337,Field Assessment 2025 - Kenya,dataset,IT,en,102,7242,s.khalil,2025-07-24,indexed,251,false,restricted
+DOC-00338,Vendor Contract 2025 - Sudan,proposal,Legal,en,156,19032,p.fernandes,2026-04-06,indexed,599,true,internal
+DOC-00339,Vendor Contract 2024 - Jordan,dataset,Communications,en,184,7912,k.thapa,2025-10-26,indexed,651,false,public
+DOC-00340,Procurement Guidelines 2024 - South Asia,report,Legal,en,18,2970,n.aziz,2026-03-19,indexed,57,false,internal
+DOC-00341,Monitoring Framework 2026 - East Africa,dataset,Executive Office,en,228,36936,t.okeke,2025-04-23,indexed,738,false,public
+DOC-00342,Data Protection Policy 2025 - Jordan,contract,Procurement,ar,242,8712,s.khalil,2025-04-11,indexed,905,false,restricted
+DOC-00343,Scholarship Guidelines 2024 - Qatar,presentation,Executive Office,en,221,12597,h.almansoori,2025-06-18,indexed,862,false,internal
+DOC-00344,Budget Summary 2024 - Kenya,proposal,Procurement,ar,248,41912,k.thapa,2026-06-03,indexed,777,false,internal
+DOC-00345,Baseline Survey 2026 - Jordan,presentation,Programmes,en,248,35464,l.osman,2026-01-31,indexed,743,false,public
+DOC-00346,HR Policy 2026 - Jordan,report,Monitoring and Evaluation,en,155,8215,t.okeke,2026-01-02,indexed,374,false,restricted
+DOC-00347,Vendor Contract 2025 - Global,dataset,Finance,en,271,45528,l.osman,2026-07-25,failed,0,false,public
+DOC-00348,Scholarship Guidelines 2026 - Bangladesh,minutes,Finance,en,111,12654,k.thapa,2026-06-26,indexed,332,false,restricted
+DOC-00349,Annual Report 2024 - Kenya,proposal,Programmes,en,202,28886,a.rahman,2026-06-16,indexed,451,false,internal
+DOC-00350,Risk Register 2024 - East Africa,contract,Monitoring and Evaluation,ar,186,25110,t.okeke,2026-08-03,indexed,420,false,restricted
+DOC-00351,Training Manual 2024 - Jordan,minutes,Finance,en,127,15113,a.rahman,2026-06-22,indexed,492,true,public
+DOC-00352,Training Manual 2024 - Jordan,contract,Procurement,ar,45,3465,j.mwangi,2025-12-02,indexed,136,false,restricted
+DOC-00353,Grant Proposal 2026 - Lebanon,presentation,Procurement,en,123,19188,y.saleh,2025-08-19,indexed,431,false,public
+DOC-00354,Data Protection Policy 2025 - Sudan,contract,HR,en,25,1250,j.mwangi,2026-04-18,indexed,92,false,internal
+DOC-00355,Programme Evaluation 2024 - Bangladesh,minutes,Finance,fr,44,5148,k.thapa,2026-03-17,indexed,125,true,internal
+DOC-00356,Quarterly Progress Report 2024 - Global,policy,Procurement,en,83,12616,s.khalil,2025-04-08,indexed,318,false,internal
+DOC-00357,Monitoring Framework 2026 - Nepal,minutes,Monitoring and Evaluation,ar,46,7038,j.mwangi,2025-06-21,indexed,115,false,internal
+DOC-00358,Quarterly Progress Report 2024 - Kenya,minutes,Monitoring and Evaluation,en,200,33000,r.dubois,2025-04-01,indexed,794,false,internal
+DOC-00359,Board Minutes 2026 - Lebanon,report,Procurement,ar,175,29400,p.fernandes,2026-05-10,indexed,553,false,internal
+DOC-00360,HR Policy 2024 - Morocco,manual,Communications,ar,263,19725,h.almansoori,2026-08-24,indexed,966,false,internal
+DOC-00361,Procurement Guidelines 2024 - Bangladesh,policy,Finance,en,135,20520,r.dubois,2025-11-03,indexed,499,false,internal
+DOC-00362,Monitoring Framework 2025 - Jordan,policy,HR,en,77,13783,s.khalil,2025-10-20,indexed,212,false,internal
+DOC-00363,Training Manual 2026 - Global,manual,HR,en,230,27370,l.osman,2025-10-19,indexed,795,false,public
+DOC-00364,Programme Evaluation 2025 - Morocco,proposal,Monitoring and Evaluation,fr,87,11136,h.almansoori,2026-06-16,indexed,227,false,public
+DOC-00365,Programme Evaluation 2025 - Jordan,contract,Programmes,en,206,12154,s.khalil,2026-06-28,indexed,729,false,internal
+DOC-00366,Baseline Survey 2024 - Jordan,minutes,IT,fr,128,9344,n.aziz,2026-02-12,indexed,480,false,internal
+DOC-00367,Grant Proposal 2025 - Lebanon,minutes,HR,ar,245,25970,k.thapa,2025-09-09,indexed,799,false,internal
+DOC-00368,Scholarship Guidelines 2025 - East Africa,policy,Monitoring and Evaluation,en,200,21200,n.aziz,2025-02-19,indexed,512,true,restricted
+DOC-00369,HR Policy 2024 - Morocco,presentation,Executive Office,ar,27,1728,s.khalil,2026-04-20,indexed,80,false,internal
+DOC-00370,Scholarship Guidelines 2026 - East Africa,contract,Executive Office,en,98,12348,s.khalil,2025-09-10,indexed,365,false,internal
+DOC-00371,Teacher Handbook 2026 - South Asia,proposal,Programmes,en,94,9964,h.almansoori,2026-01-05,indexed,284,false,internal
+DOC-00372,Monitoring Framework 2025 - South Asia,manual,Legal,en,58,3538,h.almansoori,2025-11-01,indexed,225,false,internal
+DOC-00373,HR Policy 2025 - Sudan,dataset,Monitoring and Evaluation,fr,50,2200,r.dubois,2025-01-23,indexed,190,false,internal
+DOC-00374,Quarterly Progress Report 2026 - Sudan,policy,Executive Office,en,11,1639,p.fernandes,2025-06-15,indexed,34,true,internal
+DOC-00375,HR Policy 2026 - Kenya,dataset,HR,ar,30,2490,r.dubois,2025-02-10,indexed,109,false,public
+DOC-00376,Annual Report 2024 - Jordan,minutes,HR,en,153,13464,l.osman,2026-08-31,queued,0,false,internal
+DOC-00377,Programme Evaluation 2025 - Nepal,policy,Communications,en,225,37350,k.thapa,2026-04-29,indexed,495,false,public
+DOC-00378,Board Minutes 2025 - MENA Region,minutes,Programmes,ar,269,30666,l.osman,2026-07-15,indexed,1031,false,internal
+DOC-00379,Security Plan 2026 - Qatar,report,Monitoring and Evaluation,ar,66,8580,j.mwangi,2026-07-15,indexed,177,false,public
+DOC-00380,Teacher Handbook 2025 - Nepal,minutes,HR,en,184,10488,t.okeke,2026-01-07,indexed,502,false,internal
+DOC-00381,Security Plan 2026 - East Africa,presentation,HR,en,55,6105,a.rahman,2025-06-23,indexed,140,false,internal
+DOC-00382,Programme Evaluation 2026 - Qatar,manual,Legal,en,228,8436,n.aziz,2025-07-02,indexed,825,false,internal
+DOC-00383,HR Policy 2024 - Jordan,dataset,Legal,en,247,42978,p.fernandes,2025-01-28,indexed,957,true,public
+DOC-00384,HR Policy 2024 - Jordan,dataset,Finance,ar,223,28990,y.saleh,2025-07-28,indexed,587,true,internal
+DOC-00385,Security Plan 2024 - Global,policy,Communications,ar,203,14007,p.fernandes,2026-01-19,indexed,826,false,internal
+DOC-00386,Monitoring Framework 2025 - Sudan,policy,Procurement,en,136,5168,j.mwangi,2026-08-13,indexed,354,true,internal
+DOC-00387,Data Protection Policy 2025 - Qatar,proposal,Programmes,en,94,15416,m.haddara,2026-07-31,indexed,222,false,public
+DOC-00388,Training Manual 2024 - Lebanon,policy,Finance,en,277,21883,p.fernandes,2026-07-21,indexed,1022,false,restricted
+DOC-00389,Teacher Handbook 2025 - South Asia,report,Communications,en,246,18696,t.okeke,2025-06-23,indexed,743,true,restricted
+DOC-00390,Scholarship Guidelines 2025 - Bangladesh,presentation,Communications,en,159,22896,l.osman,2025-06-29,indexed,524,false,internal
+DOC-00391,Data Protection Policy 2026 - Sudan,report,Programmes,ar,179,11814,j.mwangi,2025-09-29,indexed,672,false,public
+DOC-00392,Partnership Agreement 2026 - Bangladesh,policy,Monitoring and Evaluation,en,60,7140,k.thapa,2026-01-08,skipped,0,false,restricted
+DOC-00393,Grant Proposal 2026 - South Asia,presentation,HR,ar,6,558,a.rahman,2026-06-18,indexed,22,false,public
+DOC-00394,HR Policy 2026 - Nepal,presentation,Finance,ar,237,17064,r.dubois,2025-09-22,indexed,675,false,public
+DOC-00395,Training Manual 2026 - Nepal,manual,Finance,ar,238,34272,j.mwangi,2026-06-10,indexed,766,false,restricted
+DOC-00396,Quarterly Progress Report 2024 - Morocco,dataset,Legal,ar,177,9735,a.rahman,2025-03-07,indexed,582,false,public
+DOC-00397,Budget Summary 2026 - South Asia,dataset,Procurement,en,191,19864,h.almansoori,2025-09-10,indexed,754,false,restricted
+DOC-00398,Baseline Survey 2026 - Global,presentation,Legal,en,88,6248,s.khalil,2025-11-30,failed,0,false,public
+DOC-00399,Teacher Handbook 2024 - Lebanon,report,HR,en,47,6204,p.fernandes,2026-08-10,indexed,180,false,internal
+DOC-00400,Partnership Agreement 2026 - Global,proposal,IT,en,87,9483,y.saleh,2025-08-22,queued,0,false,restricted
+DOC-00401,Risk Register 2025 - Qatar,proposal,Monitoring and Evaluation,ar,204,27336,l.osman,2026-06-10,indexed,715,false,internal
+DOC-00402,Grant Proposal 2026 - Morocco,manual,Legal,en,80,10640,l.osman,2026-05-24,indexed,277,true,public
+DOC-00403,Quarterly Progress Report 2025 - Sudan,policy,Procurement,en,35,2065,r.dubois,2026-03-20,indexed,85,true,internal
+DOC-00404,HR Policy 2024 - Lebanon,manual,Programmes,ar,8,1400,s.khalil,2025-11-15,indexed,23,false,internal
+DOC-00405,Procurement Guidelines 2024 - Morocco,report,Communications,en,34,1496,n.aziz,2026-02-10,indexed,88,false,internal
+DOC-00406,Audit Findings 2025 - Kenya,proposal,IT,en,148,10212,s.khalil,2025-02-17,skipped,0,false,public
+DOC-00407,Monitoring Framework 2024 - Nepal,dataset,Executive Office,en,206,10506,l.osman,2026-04-07,indexed,782,false,internal
+DOC-00408,Training Manual 2025 - Lebanon,presentation,Executive Office,en,148,13468,s.khalil,2026-03-14,indexed,413,false,internal
+DOC-00409,Baseline Survey 2025 - Morocco,dataset,Legal,en,2,158,s.khalil,2025-04-29,indexed,5,true,internal
+DOC-00410,Scholarship Guidelines 2026 - East Africa,dataset,Monitoring and Evaluation,en,115,6095,y.saleh,2026-08-18,indexed,369,true,restricted
+DOC-00411,Budget Summary 2024 - MENA Region,report,Communications,ar,69,4347,y.saleh,2026-01-18,indexed,232,false,restricted
+DOC-00412,Data Protection Policy 2024 - Morocco,presentation,IT,ar,61,2440,k.thapa,2026-01-28,indexed,151,false,restricted
+DOC-00413,HR Policy 2026 - MENA Region,proposal,Legal,en,120,5760,n.aziz,2025-09-15,indexed,441,false,public
+DOC-00414,Procurement Guidelines 2024 - Jordan,presentation,Legal,ar,205,33415,y.saleh,2026-05-21,indexed,718,false,internal
+DOC-00415,Annual Report 2024 - Lebanon,presentation,Executive Office,fr,158,12482,r.dubois,2026-01-13,indexed,419,false,internal
+DOC-00416,Risk Register 2024 - Morocco,policy,Legal,en,44,5588,s.khalil,2026-01-07,indexed,126,false,public
+DOC-00417,Programme Evaluation 2024 - Morocco,report,Procurement,en,271,41463,l.osman,2025-01-12,indexed,766,false,internal
+DOC-00418,Security Plan 2024 - MENA Region,report,Finance,en,185,16835,n.aziz,2025-02-14,indexed,605,false,internal
+DOC-00419,Field Assessment 2026 - Qatar,policy,Procurement,ar,280,14000,s.khalil,2026-08-19,indexed,1072,false,public
+DOC-00420,Risk Register 2024 - Global,dataset,Executive Office,ar,121,14641,r.dubois,2026-07-15,indexed,294,false,internal
+DOC-00421,Teacher Handbook 2025 - Bangladesh,presentation,Communications,ar,263,39187,m.haddara,2025-02-04,indexed,1077,false,public
+DOC-00422,Board Minutes 2024 - Bangladesh,dataset,Communications,en,202,8484,h.almansoori,2025-10-01,indexed,682,false,restricted
+DOC-00423,Procurement Guidelines 2026 - Kenya,minutes,Finance,en,119,5950,h.almansoori,2026-09-14,indexed,361,false,internal
+DOC-00424,Risk Register 2026 - South Asia,report,Procurement,fr,109,17440,h.almansoori,2025-03-24,indexed,268,false,internal
+DOC-00425,Budget Summary 2025 - Morocco,contract,Legal,en,279,20646,n.aziz,2026-05-06,indexed,1099,true,public
+DOC-00426,Baseline Survey 2025 - South Asia,presentation,Legal,ar,235,16215,a.rahman,2025-06-13,indexed,624,false,public
+DOC-00427,Security Plan 2026 - Kenya,proposal,HR,ar,35,2240,r.dubois,2026-07-06,queued,0,true,restricted
+DOC-00428,Training Manual 2024 - Qatar,contract,Monitoring and Evaluation,ar,69,3312,s.khalil,2026-04-13,indexed,152,false,public
+DOC-00429,Quarterly Progress Report 2025 - Sudan,report,Finance,en,223,31443,m.haddara,2025-09-24,indexed,494,false,internal
+DOC-00430,Security Plan 2024 - Lebanon,dataset,IT,ar,14,1064,j.mwangi,2025-02-18,indexed,44,true,internal
+DOC-00431,Programme Evaluation 2026 - Qatar,report,IT,en,177,12390,k.thapa,2025-06-16,indexed,657,false,internal
+DOC-00432,Security Plan 2025 - Morocco,report,Finance,en,69,8694,p.fernandes,2026-02-12,indexed,253,false,internal
+DOC-00433,Vendor Contract 2026 - Morocco,proposal,Finance,ar,146,11388,h.almansoori,2025-05-24,indexed,370,false,public
+DOC-00434,Budget Summary 2025 - South Asia,presentation,HR,ar,91,15379,n.aziz,2025-12-01,indexed,321,false,public
+DOC-00435,Vendor Contract 2026 - East Africa,manual,Monitoring and Evaluation,en,108,16632,r.dubois,2025-06-10,indexed,386,true,internal
+DOC-00436,Field Assessment 2024 - Qatar,report,Finance,en,115,6440,n.aziz,2026-01-02,indexed,446,false,public
+DOC-00437,Grant Proposal 2024 - Qatar,manual,Communications,ar,136,15912,r.dubois,2025-06-18,indexed,346,false,internal
+DOC-00438,Training Manual 2025 - Morocco,presentation,Procurement,ar,40,3560,h.almansoori,2026-03-20,indexed,120,true,internal
+DOC-00439,Vendor Contract 2026 - South Asia,proposal,Legal,ar,110,15510,m.haddara,2026-07-03,indexed,425,false,internal
+DOC-00440,HR Policy 2025 - South Asia,manual,Communications,ar,273,17745,l.osman,2025-01-28,indexed,796,false,restricted
+DOC-00441,Budget Summary 2026 - East Africa,policy,Programmes,fr,112,19712,r.dubois,2026-07-27,indexed,398,false,internal
+DOC-00442,Partnership Agreement 2026 - East Africa,report,IT,en,50,2100,t.okeke,2025-10-25,indexed,137,false,public
+DOC-00443,Baseline Survey 2026 - Jordan,contract,IT,en,204,13260,l.osman,2025-12-12,indexed,834,false,public
+DOC-00444,Procurement Guidelines 2025 - Bangladesh,manual,Finance,en,15,645,y.saleh,2025-12-27,indexed,43,false,public
+DOC-00445,Security Plan 2024 - South Asia,report,Communications,ar,67,12060,k.thapa,2025-09-30,failed,0,false,internal
+DOC-00446,Procurement Guidelines 2025 - Global,contract,IT,en,96,10656,h.almansoori,2025-01-25,failed,0,false,public
+DOC-00447,Procurement Guidelines 2024 - Qatar,minutes,Executive Office,en,192,25920,k.thapa,2025-11-16,indexed,573,false,internal
+DOC-00448,Programme Evaluation 2024 - Lebanon,report,Finance,ar,265,44520,m.haddara,2025-10-31,indexed,792,false,internal
+DOC-00449,Budget Summary 2026 - Jordan,policy,Monitoring and Evaluation,en,150,22800,t.okeke,2025-04-05,indexed,533,true,restricted
+DOC-00450,Annual Report 2026 - South Asia,proposal,Legal,fr,86,5676,s.khalil,2026-05-08,indexed,342,true,internal
+DOC-00451,Security Plan 2025 - Kenya,dataset,Executive Office,en,266,25802,n.aziz,2025-08-21,indexed,807,true,public
+DOC-00452,Audit Findings 2025 - East Africa,proposal,Procurement,ar,242,25652,k.thapa,2025-06-08,indexed,578,false,restricted
+DOC-00453,Quarterly Progress Report 2026 - Jordan,report,Procurement,en,129,8514,m.haddara,2025-04-12,indexed,451,false,internal
+DOC-00454,Scholarship Guidelines 2024 - Kenya,dataset,Executive Office,en,93,12369,y.saleh,2026-01-09,indexed,275,true,restricted
+DOC-00455,Data Protection Policy 2025 - Lebanon,policy,Finance,ar,108,17388,j.mwangi,2026-01-23,indexed,338,false,internal
+DOC-00456,Budget Summary 2024 - Jordan,policy,Finance,fr,160,20000,y.saleh,2025-07-02,indexed,455,true,internal
+DOC-00457,Procurement Guidelines 2025 - East Africa,presentation,Communications,en,164,18532,k.thapa,2026-07-13,queued,0,true,internal
+DOC-00458,Partnership Agreement 2025 - Global,contract,HR,en,221,24089,j.mwangi,2026-03-07,indexed,667,false,internal
+DOC-00459,Partnership Agreement 2026 - Morocco,report,Finance,en,71,6461,l.osman,2026-01-07,indexed,251,false,internal
+DOC-00460,Quarterly Progress Report 2026 - Morocco,presentation,Programmes,ar,91,13741,m.haddara,2025-07-07,indexed,280,true,internal
+DOC-00461,Security Plan 2025 - MENA Region,presentation,Procurement,fr,54,3132,l.osman,2025-03-18,queued,0,true,internal
+DOC-00462,Training Manual 2024 - Lebanon,policy,IT,ar,99,10692,p.fernandes,2025-09-30,indexed,248,false,internal
+DOC-00463,Security Plan 2025 - Morocco,policy,HR,en,122,7564,t.okeke,2025-06-09,indexed,313,false,public
+DOC-00464,HR Policy 2025 - East Africa,policy,Executive Office,ar,100,17400,l.osman,2025-10-02,indexed,255,true,public
+DOC-00465,Field Assessment 2025 - Lebanon,minutes,Monitoring and Evaluation,ar,13,728,y.saleh,2025-06-01,indexed,51,false,restricted
+DOC-00466,Audit Findings 2024 - Bangladesh,contract,Monitoring and Evaluation,fr,113,6667,y.saleh,2025-10-10,indexed,261,false,internal
+DOC-00467,Training Manual 2025 - Jordan,dataset,Executive Office,en,43,5977,a.rahman,2025-01-17,indexed,136,true,internal
+DOC-00468,Procurement Guidelines 2025 - MENA Region,manual,Legal,en,258,26832,k.thapa,2026-07-14,queued,0,true,public
+DOC-00469,Training Manual 2024 - East Africa,proposal,Communications,en,46,3818,y.saleh,2025-09-25,indexed,130,false,restricted
+DOC-00470,Security Plan 2025 - Jordan,proposal,IT,en,104,5408,j.mwangi,2025-01-13,indexed,383,false,restricted
+DOC-00471,Audit Findings 2024 - Kenya,policy,Executive Office,en,15,1035,k.thapa,2026-07-24,skipped,0,true,internal
+DOC-00472,Data Protection Policy 2025 - MENA Region,proposal,Legal,ar,1,58,k.thapa,2026-08-07,indexed,2,false,restricted
+DOC-00473,Board Minutes 2026 - Kenya,policy,Executive Office,en,30,4620,a.rahman,2025-08-10,indexed,85,false,internal
+DOC-00474,Grant Proposal 2026 - South Asia,report,Executive Office,fr,172,25284,a.rahman,2026-06-24,indexed,427,false,restricted
+DOC-00475,Procurement Guidelines 2025 - Kenya,policy,Monitoring and Evaluation,en,119,7259,r.dubois,2025-11-27,indexed,336,true,public
+DOC-00476,Procurement Guidelines 2026 - Bangladesh,minutes,Monitoring and Evaluation,en,35,2485,r.dubois,2025-10-27,indexed,99,false,internal
+DOC-00477,Vendor Contract 2025 - Sudan,minutes,IT,en,209,19855,n.aziz,2025-02-23,indexed,514,false,restricted
+DOC-00478,HR Policy 2026 - Jordan,manual,Communications,ar,262,20960,l.osman,2026-02-27,skipped,0,false,public
+DOC-00479,Audit Findings 2024 - MENA Region,proposal,HR,en,215,36980,a.rahman,2025-09-13,indexed,588,false,public
+DOC-00480,Training Manual 2024 - Kenya,minutes,IT,en,86,7912,h.almansoori,2025-07-28,queued,0,false,internal
+DOC-00481,Grant Proposal 2025 - Kenya,manual,HR,en,245,29890,k.thapa,2025-05-26,indexed,863,true,restricted
+DOC-00482,Risk Register 2025 - Qatar,dataset,Procurement,en,125,11375,p.fernandes,2025-09-05,indexed,308,false,public
+DOC-00483,Baseline Survey 2026 - MENA Region,minutes,Procurement,fr,69,10074,l.osman,2025-07-25,indexed,200,false,restricted
+DOC-00484,Grant Proposal 2024 - Nepal,report,Programmes,ar,148,12432,a.rahman,2025-08-22,indexed,505,false,internal
+DOC-00485,Budget Summary 2026 - Kenya,report,Communications,ar,136,11968,n.aziz,2026-07-16,indexed,356,false,internal
+DOC-00486,Grant Proposal 2025 - Kenya,minutes,Finance,en,93,16368,j.mwangi,2025-06-26,indexed,298,false,public
+DOC-00487,Annual Report 2024 - Qatar,proposal,Communications,en,266,13832,r.dubois,2026-05-11,indexed,844,false,restricted
+DOC-00488,Board Minutes 2026 - Qatar,policy,Legal,ar,75,9375,m.haddara,2026-01-18,indexed,214,false,public
+DOC-00489,Annual Report 2025 - Nepal,report,Executive Office,en,231,18018,n.aziz,2026-07-26,indexed,536,false,public
+DOC-00490,Annual Report 2026 - Kenya,presentation,HR,en,39,4836,s.khalil,2025-01-14,indexed,92,true,internal
+DOC-00491,Security Plan 2024 - Bangladesh,contract,IT,en,195,31980,n.aziz,2025-07-21,failed,0,false,internal
+DOC-00492,Vendor Contract 2026 - East Africa,proposal,HR,fr,278,50040,k.thapa,2025-05-19,indexed,1063,false,internal
+DOC-00493,Training Manual 2026 - Lebanon,dataset,HR,en,100,8800,l.osman,2026-02-17,indexed,393,false,internal
+DOC-00494,Annual Report 2025 - Lebanon,presentation,HR,ar,83,13861,n.aziz,2026-04-09,indexed,274,true,internal
+DOC-00495,Budget Summary 2025 - Nepal,contract,Monitoring and Evaluation,ar,145,7105,t.okeke,2025-11-30,indexed,359,true,internal
+DOC-00496,Data Protection Policy 2026 - Jordan,dataset,Programmes,en,160,12000,n.aziz,2026-07-21,indexed,380,false,internal
+DOC-00497,Security Plan 2026 - Sudan,policy,Procurement,en,109,17331,j.mwangi,2025-06-28,indexed,389,false,internal
+DOC-00498,Vendor Contract 2024 - Qatar,minutes,Monitoring and Evaluation,fr,42,3612,h.almansoori,2025-09-07,indexed,109,true,public
+DOC-00499,Grant Proposal 2026 - Qatar,report,HR,en,67,2546,k.thapa,2026-04-09,indexed,228,false,internal
+DOC-00500,Grant Proposal 2026 - Jordan,dataset,Finance,fr,192,12288,p.fernandes,2025-02-03,skipped,0,true,internal

@@ -343,6 +343,8 @@ class RedisCache:
 
     
 
+    
+
 # Global cache instance (initialized in main.py)
 # It is a global variable - any part of the app can import and use to reach the same Redis cache.
 cache: Optional[RedisCache] = None

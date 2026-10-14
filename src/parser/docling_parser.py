@@ -55,27 +55,44 @@ Design any class by answering 6 questions:
 6. How is it created?              -> a factory in deps.py, one per process
 
 """
-
-import uuid
-from docling.document_converter import DocumentConverter
+import asyncio
 from loguru import logger
-
-from typing import Union, BinaryIO, Optional, Any
+import re
+import uuid # Universal Unique Identifier - 128-bit value - Guaranteed to be unique  - It is hexadecimal ID written with as 32 characters - collision is very low ~ low possible of duplication
 from pathlib import Path # way to handle file and directory path
+from typing import Union, BinaryIO, Optional, Any
+
+
+from docling.datamodel.base_models import ConversionStatus, InputFormat
+from docling.document_converter import DocumentConverter, PdfFormatOption
+from docling.datamodel.pipeline_options import PdfPipelineOptions
+
 
 from src.parser.base import ParsedDocument
 from src.core.exceptions import ParsingError
 
-from docling.datamodel.base_models import ConversionStatus, InputFormat
-from docling.document_converter import PdfFormatOption
-from docling.datamodel.pipeline_options import PdfPipelineOptions
 
-import time
+# When docling parse a file, it splits into pieces like title, headlines, paragraphs, tables and pictures.
+# These classes are the types of these pieces. The parser uses them to check what each piece is
+from docling_core.types.doc import (
+    DoclingDocument, # Whole parse document (result.document) ~ used in typed hint
+    PictureItem, # An image or chart ~ used in _extract_figures
+    SectionHeaderItem,
+    TableItem, # A table ~ used in _extract_tables
+    TextItem, 
+    TitleItem, # The document title ~ used in title metadata and the first section 
+
+)
+
+REFERENCE_HEADINGS = {"references", "bibliography", "works cited", "reference list"}
+
+
 
 
 class DoclingParser:
     """Parser using Docling for PDF, DOCX, and HTML documents. Build one per process."""
 
+    
     SUPPORTED_FORMAT = [".pdf", ".docx", ".html", ".htm"]
     
 
@@ -84,17 +101,38 @@ class DoclingParser:
             self,
             *, # keyword-only, so calls read as DoclingParser(do_ocr=True)
             do_ocr: bool = True,
-                 ) -> None:
+            artifcat_path: Optional[Union[str, Path]] = str,
+            timeout_s: float = 300, # per document: Docling returns PARTIAL SUCCESS when it is hit
+            max_pages: int = 500,
+            max_file_mb: int = 50,
+            max_concurrency: int = 1, # conversion are CPU/GPU heavy: scale with worker processes, not threads,
+            warmup: bool = True, # load models at startup so a broken setup fails at bools, not on the first request 
+            ) -> None:
         """Initialize docling parser"""
-        try:
-            options = PdfPipelineOptions(do_ocr=do_ocr, do_table_structure = True)
-            self.coverter = DocumentConverter(
-                format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=options)}
-                ) # heavy: built once, reused
-            logger.info("Docling Parser initialized successfully")
 
-        except Exception as e:
-            logger.error(f"Failed to initialize Docling Parser: {e}")
+        # Define PDF pipeline options
+        options = PdfPipelineOptions(
+            do_ocr= do_ocr,
+            do_table_structure= True,
+            document_timeout=timeout_s,
+            artifacts_path=artifcat_path,
+
+        )
+        # No try/except here: if the converter can't be built, startup should fail loudly.
+        self.converter = DocumentConverter(
+            format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=options)}
+        )
+
+        if warmup:
+            self.converter.initialize_pipeline(InputFormat.PDF)
+
+        self.max_pages = max_pages
+        self.max_file_size = max_file_mb
+        self._slots = asyncio.Semaphore(max_concurrency) # require revision
+
+        logger.info("Docling Parser initialized successfully")
+
+
 
 
     async def parser(
@@ -124,6 +162,9 @@ class DoclingParser:
                 if not file_path.exists():
                     raise ParsingError(f"File not found: {file_path}")
 
+                elif file_path.suffix.lower() not in self.SUPPORTED_FORMAT:
+                    raise ParsingError(f"Unsupported format: {file_path.name}")
+
             else: 
                 raise ParsingError("Docling parser requires file path, not file object")
 
@@ -133,8 +174,10 @@ class DoclingParser:
 
             # covnert document
             logger.info(f"Parsing document: {file_path}")
-            result = self.coverter.convert(str(file_path))
-
+            result = self.coverter.convert(
+                path = str(file_path),
+                )
+            
             # Extract content
             content = result.document.export_to_markdown()
 
@@ -157,10 +200,12 @@ class DoclingParser:
 
 
 
-
         except Exception as e:
             pass
 
+        
+
+        
 
         return ParsedDocument(
             document_id = document_id,
@@ -173,8 +218,15 @@ class DoclingParser:
             references=references
         )
 
+    @staticmethod
+    def _page(item) -> Optional[int]:
+        """1-based page number; None for formats without pages (DOCX, HTML)."""
+        return item.prov[0].page_no if item.prov else None
+
+
     def _extract_metadata(self, result, file_path: Path) -> dict:
         """Extract metadata from parsed document."""
+
         metadata = {
             "file_path": file_path,
             "file_size": file_path.stat().st_size if file_path.exists() else 0,
@@ -191,11 +243,14 @@ class DoclingParser:
                         "author": getattr(doc_metadata, "author", None),
                         "creation_date": getattr(doc_metadata, "creation_date", None),
                         "modification_date": getattr(doc_metadata, "modification_date", None),
-                        "page_count": getattr(doc_metadata, "page_count", None)
+                        "page_count": getattr(doc_metadata, "page_count", None),
+                        "parser":"docling",
+                        "status": result.status.value
                     }
                 )
 
         return metadata
+
 
 
     def _extract_sections(self, result) ->list[dict]:
@@ -225,25 +280,25 @@ class DoclingParser:
         return sections
 
 
-    def _extract_tables(self, result) -> list[dict]:
-        """Extract tables from document."""
+    def _extract_tables(self, doc: DoclingDocument) -> list[dict]:
+        """Extract tables with captions and page numbers from document."""
 
-        tables = []
+        tables: list[dict] = []
 
         try:
-            for idx, item in enumerate(result.document.children):
-                if hasattr(item, "label") and "table" in item.label.lower():
-                    table = {
-                        "table_id": f"table_{idx}",
-                        "caption": getattr(item, "caption", None),
-                        "position": idx,
-                        "content": str(item)
-                    }
-
-                    tables.append(table)
-
+            for item, _ in doc.iterate_items(): # walk the document from top to bottom
+                if isinstance(item, TableItem):
+                    tables.append(
+                        {
+                            "table_id": item.self_ref,
+                            "caption": item.caption_text(doc) or None,
+                            "content": item.export_to_markdown(doc),
+                            "page": self._page,
+                            "position": len(tables)
+                        }
+                    )
         except Exception as e:
-            logger.warning("Could not extract tables: {e}")
+            logger.warning(f"Could not extract tables: {e}")
 
         return tables
 
@@ -295,7 +350,7 @@ class DoclingParser:
 
 
 if __name__ == "__main__":
-    import asyncio
+
     # parser is an async - so calling it just creates a coroutine
     converter = DoclingParser()
     doc = asyncio.run(converter.parser("Alice_in_Wonderland.pdf"))
