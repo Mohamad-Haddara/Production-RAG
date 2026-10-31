@@ -1,32 +1,35 @@
 """Parser factory for selection appropriate parser based on file type"""
+# Factory that picksthe parser by file extension through BaseParser
 
+"""
+One production note: create the factory once per process, at app startup or in the worker, never once per request. 
+DoclingParser() loads Docling’s AI models, which takes seconds and a lot of memory.
+"""
 
 from pathlib import Path
 from typing import Union
 
 from loguru import logger
 
-
+from src.parser.base import BaseParser
 from src.parser.docling_parser import DoclingParser
 from src.parser.csv_parser import CSVParser 
 from src.parser.json_parser import JSONParser
 
-
-from src.parser.base import BaseParser
 from src.core.exceptions import ParsingError
 
 
 class ParserFactory:
     """
-    Factory for creating appropriate parser based on file format
+    Factory for creating appropriate parser based on file format.
     """
 
     def __init__(self):
         """Initialize parser factory with available parser."""
-        self.parsers = [
+        self.parsers: list[BaseParser] = [
             DoclingParser(),
-            CSVParser(),
-            JSONParser()
+            #CSVParser(),
+            #JSONParser()
         ]
 
 
@@ -70,11 +73,14 @@ class ParserFactory:
             list of suppported file extension
         """
 
-        format = set()
+        formats = set()
         for parser in self.parsers:
-            format.update(self.parsers.get_supported_formats())
+            formats.update(parser.get_supported_formats())
 
 
+        return sorted(formats)
+
+    
     def supported_formats(self, file_extension: str) -> bool:
         """
         Check if format is supported.

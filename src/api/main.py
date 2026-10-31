@@ -255,7 +255,7 @@ to your server as its preflight cross-origin resource sharing (CORS) checks with
 # Allowing incoming requests from ant=y origin, methods (GET,POST,...) and headers
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Configure for production
+    allow_origins=["*"], # Configure for production ~ our frontend
     allow_credentials=["*"],
     allow_methods=["*"],
     allow_headers=["*"], 

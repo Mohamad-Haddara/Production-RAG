@@ -60,7 +60,7 @@ B) Then in your .env: REDIS_HOST=localhost, REDIS_PORT=6379
 To manage it:
 - docker stop redis # stop
 - docker start redis # start again
-- docker exec -it redis redis-cl3 # Open Redis CLI
+- docker exec -it redis redis-cli # Open Redis CLI
 
 
 C) Better for a real project: use docker-compose so your app + Redis start together
@@ -71,7 +71,7 @@ For actual production, you usually don't self-host Redis in a plain container â€
 But that's later. For learning and local dev, the Docker container above is exactly right.
 
 
-I can connect redis server using redis-cli, just as I connect to any Redis instancxe.
+I can connect redis server using redis-cli, just as I connect to any Redis instance.
 docker exec -it redis redis-cli
 """
 
@@ -82,6 +82,8 @@ from datetime import timedelta
 import redis.asyncio as aioredis
 from loguru import logger
 import asyncio
+
+from src.core.exceptions import CacheError, RedisConnectionError
 
 
 
@@ -148,6 +150,7 @@ class RedisCache:
         except Exception as e:
             logger.error(f"Failed to connect to Redis: {e}")
             # raise an error
+            raise RedisConnectionError(f"Failed to connect to Redis: {e}")
 
     # Create disconnect
     async def disconnect(self) -> None:
@@ -157,6 +160,7 @@ class RedisCache:
             logger.info("Disconnect from Redis")
 
 
+    # Internal method
     #make a key
     def _make_key(self, key: str) ->str:
         """
@@ -219,7 +223,7 @@ class RedisCache:
         except Exception as e:
             logger.error(f"Cache get failed for key: {key}: {e}")
             # raise CacheError
-            return None
+            raise CacheError(f"Failed to get from cache: {e}")
 
 
 
@@ -311,6 +315,7 @@ class RedisCache:
         except Exception as e:
             logger.error(f"Cache delete failed for key: {key}: {e}")
             # raise cache error
+            raise CacheError(f"Failed to delete from cache: {e}")
 
 
     async def exists(self, key: str) -> bool:
@@ -340,7 +345,7 @@ class RedisCache:
         except Exception as e:
             logger.error(f"Cache exists check failed for key {key}: {e}")
             # raise error
-
+            raise CacheError(f"Failed to check cache existence: {e}")
     
 
     

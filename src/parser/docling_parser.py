@@ -1,5 +1,5 @@
 """Parser using Docling for PDF, DOCX, and HTML documents."""
-#Create component to load once and reuse - Docling loads heavy models, so creating it per request would reload them every time.
+# Create component to load once and reuse - Docling loads heavy models, so creating it per request would reload them every time.
 # Class give us one place for our rules
 """
 1. Create it once: build DocumentConverter in __init__, and create the class once through an @lru_cache factory so each worker process loads the models only once.
@@ -55,6 +55,7 @@ Design any class by answering 6 questions:
 6. How is it created?              -> a factory in deps.py, one per process
 
 """
+
 import asyncio
 from loguru import logger
 import re
@@ -68,7 +69,7 @@ from docling.document_converter import DocumentConverter, PdfFormatOption
 from docling.datamodel.pipeline_options import PdfPipelineOptions
 
 
-from src.parser.base import ParsedDocument
+from src.parser.base import ParsedDocument, BaseParser
 from src.core.exceptions import ParsingError
 
 
@@ -89,7 +90,7 @@ REFERENCE_HEADINGS = {"references", "bibliography", "works cited", "reference li
 
 
 
-class DoclingParser:
+class DoclingParser(BaseParser):
     """Parser using Docling for PDF, DOCX, and HTML documents. Build one per process."""
 
     
@@ -101,8 +102,8 @@ class DoclingParser:
             self,
             *, # keyword-only, so calls read as DoclingParser(do_ocr=True)
             do_ocr: bool = True,
-            artifcat_path: Optional[Union[str, Path]] = str,
-            timeout_s: float = 300, # per document: Docling returns PARTIAL SUCCESS when it is hit
+            artifcats_path: Optional[Union[str, Path]] = None, # Pre-downloaded models, for servers without internet
+            #timeout_s: float = 300, # per document: Docling returns PARTIAL SUCCESS when it is hit
             max_pages: int = 500,
             max_file_mb: int = 50,
             max_concurrency: int = 1, # conversion are CPU/GPU heavy: scale with worker processes, not threads,
@@ -114,8 +115,8 @@ class DoclingParser:
         options = PdfPipelineOptions(
             do_ocr= do_ocr,
             do_table_structure= True,
-            document_timeout=timeout_s,
-            artifacts_path=artifcat_path,
+            #document_timeout=timeout_s,
+            artifacts_path=artifcats_path,
 
         )
         # No try/except here: if the converter can't be built, startup should fail loudly.
@@ -127,7 +128,7 @@ class DoclingParser:
             self.converter.initialize_pipeline(InputFormat.PDF)
 
         self.max_pages = max_pages
-        self.max_file_size = max_file_mb
+        self.max_file_size = max_file_mb * 1024 * 1024 # Docling expect bytes, not MB
         self._slots = asyncio.Semaphore(max_concurrency) # require revision
 
         logger.info("Docling Parser initialized successfully")
@@ -151,7 +152,7 @@ class DoclingParser:
             - ParsedDocument with extracted content and metadata
 
         Raises:
-            ParsingError: If parsing fails
+            ParsingError: Unsupported or missing file, or failed conversion
         """
 
         try:
@@ -174,34 +175,39 @@ class DoclingParser:
 
             # covnert document
             logger.info(f"Parsing document: {file_path}")
-            result = self.coverter.convert(
-                path = str(file_path),
+            result = self.converter.convert(
+                source = str(file_path),
+                raises_on_error=False,
+                max_num_pages=self.max_pages,
+                max_file_size=self.max_file_size,
+                
                 )
-            
+
+            doc = result.document
             # Extract content
-            content = result.document.export_to_markdown()
+            content = doc.export_to_markdown()
 
             # Extract metadata
             metadata = self._extract_metadata(result, file_path)
 
             # Extract sections
-            sections = self._extract_sections(result)
+            sections = self._extract_sections(doc)
 
             # Extract tables
-            tables = self._extract_tables(result)
+            tables = self._extract_tables(doc)
 
             #Extract figures
-            figures = self._extract_figures(result)
+            figures = self._extract_figures(doc)
 
             #Extract references
-            references = self._extract_references(result)
+            references = self._extract_references(doc)
 
 
 
 
 
         except Exception as e:
-            pass
+            raise ParsingError(f"Failed to parse {file_path}: {e}")
 
         
 
@@ -211,12 +217,14 @@ class DoclingParser:
             document_id = document_id,
             content = content,
             metadata=metadata,
-            format=file_path.suffix[1:], # remove leading dot
+            format=file_path.suffix[1:].lower(), # remove leading dot
             sections = sections,
             tables = tables,
             figures=figures,
             references=references
         )
+
+
 
     @staticmethod
     def _page(item) -> Optional[int]:
@@ -226,7 +234,7 @@ class DoclingParser:
 
     def _extract_metadata(self, result, file_path: Path) -> dict:
         """Extract metadata from parsed document."""
-
+        doc = result.document
         metadata = {
             "file_path": file_path,
             "file_size": file_path.stat().st_size if file_path.exists() else 0,
@@ -245,7 +253,8 @@ class DoclingParser:
                         "modification_date": getattr(doc_metadata, "modification_date", None),
                         "page_count": getattr(doc_metadata, "page_count", None),
                         "parser":"docling",
-                        "status": result.status.value
+                        "status": result.status.value,
+                        "file_name": getattr(doc_metadata, "file_name") #check later
                     }
                 )
 
@@ -253,30 +262,43 @@ class DoclingParser:
 
 
 
-    def _extract_sections(self, result) ->list[dict]:
-        """Extract document sections with hierarchy"""
+    def _extract_sections(self, doc: DoclingDocument) ->list[dict]:
+        """Extract document sections (Title and section headings) with hierarchy"""
 
-        sections = []
+        sections: list[dict]= []
 
         try:
 
-            # Iterate through document structure
-            for idx, item in enumerate(result.document.children):
-                if hasattr(item, "label") and "heading" in item.label.lower():
-                    section = {
-                        "section_id": f"section_{idx}",
-                        "title": item.text if hasattr(item, "text") else "",
-                        "level": int(item.label.split("_")[-1]) if "_" in item.label else 1,
-                        "content": "",
-                        "position": idx
-                    }
-
-                    sections.append(section)
-
-
+             
+            # Captions already attached to a table/figure are reported there, not as section text.
+            caption_refs = {ref.cref for node in [*doc.tables, *doc.pictures] for ref in node.captions}
+ 
+            for item, _ in doc.iterate_items(): # walk the document from top to bottom
+                if isinstance(item, (TitleItem, SectionHeaderItem)):
+                    sections.append(
+                        {
+                            "section_id": item.self_ref,
+                            "title": item.text,
+                            "level": getattr(item, "level", 0), # the document title is level 0
+                            "content": [],
+                            "page": self._page(item),
+                            "position": len(sections)
+                        }
+                    )
+                elif (
+                    sections
+                    and isinstance(item, TextItem)
+                    and item.self_ref not in caption_refs
+                    and item.text.strip()
+                ):
+                    sections[-1]["content"].append(item.text.strip())
+ 
         except Exception as e:
             logger.warning(f"Could not extract sections: {e}")
-
+ 
+        for section in sections:
+            section["content"] = "\n".join(section["content"])
+ 
         return sections
 
 
@@ -293,7 +315,7 @@ class DoclingParser:
                             "table_id": item.self_ref,
                             "caption": item.caption_text(doc) or None,
                             "content": item.export_to_markdown(doc),
-                            "page": self._page,
+                            "page": self._page(item ),
                             "position": len(tables)
                         }
                     )
@@ -303,19 +325,20 @@ class DoclingParser:
         return tables
 
 
-    def _extract_figures(self, result) -> list[dict]:
-        """Extract figures/images from document."""
-        figures = []
+    def _extract_figures(self, doc: DoclingDocument) -> list[dict]:
+        """Extract figures/images/charts with captions and page numbers from document."""
+        figures: list[dict]= []
         try:
-            for idx, item in enumerate(result.document.children):
-                if hasattr(item, "label") and "figure" in item.label.lower():
-                    figure = {
-                        "figure_id": f"figure_{idx}",
-                        "caption": getattr(item, "caption", None),
-                        "position": idx
-                    }
-
-                    figures.append(figure)
+            for item, _ in doc.iterate_items():
+                if isinstance(item, PictureItem):
+                    figures.append(
+                        {
+                            "figure_id": item.self_ref,
+                            "caption": item.caption_text(doc) or None,
+                            "page": self._page(item ),
+                            "position": len(figures)
+                        }
+                    )
 
         except Exception as e:
             logger.warning(f"Could not extract figures: {e}")
@@ -324,39 +347,54 @@ class DoclingParser:
 
 
 
-
-    def _extract_references(self, result) -> list[str]:
-        """Extract references/bibliography."""
-        references = []
+    # Review it again
+    def _extract_references(self, doc: DoclingDocument) -> list[str]:
+        """Extract references/bibliography heading."""
+        references: list[dict]= []
 
         try:
             # Look for references section
             in_references = False
-            for item in result.document.children:
-                if hasattr(item, "text"):
-                    text_lower = item.text.lower()
-                    if "references" in text_lower or "bibliography" in text_lower:
-                        in_references = True
-                        continue
-
-                    if in_references and hasattr(item, "label"):
-                        if "heading" in item.label.lower():
-                            break  # End of references section
-                        references.append(item.text)
+            for item, _ in doc.iterate_items():
+        
+                if isinstance(item, (TitleItem, SectionHeaderItem)):
+                    if in_references:
+                        break  # next heading ends the references section
+                    heading = re.sub(r"^[\d.\s]+", "", item.text).strip().lower()  # "7. References" -> "references"
+                    in_references = heading in REFERENCE_HEADINGS
+                elif in_references and isinstance(item, TextItem) and item.text.strip():
+                    references.append(item.text.strip())
         except Exception as e:
             logger.warning(f"Could not extract references: {e}")
 
         return references
 
 
+
+    def supports_format(self, file_extensions: str) -> bool:
+        """Check if the format is supported"""
+        return file_extensions.lower() in self.SUPPORTED_FORMAT
+
+    def get_supported_formats(self) -> list[str]:
+        """Get list of supported formats"""
+        return self.SUPPORTED_FORMAT
+
+
 if __name__ == "__main__":
+    import sys
 
     # parser is an async - so calling it just creates a coroutine
-    converter = DoclingParser()
-    doc = asyncio.run(converter.parser("Alice_in_Wonderland.pdf"))
-    print(f"\nThe content: {doc.content[:100]}")
+    parser = DoclingParser()
+    doc = asyncio.run(parser.parser("/Users/mhaddara/Documents/AI Applications/RAG/Alice_in_Wonderland.pdf"))
+    print(f"\nThe content: {doc.content[:6000]}")
     print(f"\nThe metatadata: {doc.metadata}")
     print(f"\nThe reference: {doc.references}")
     print(f"\nThe table: {doc.tables}")
     print(f"\nThe figures: {doc.figures}")
-    
+
+    print(
+        f"{len(doc.sections)} sections | {len(doc.tables)} tables | "
+        f"{len(doc.tables)} tables | {len(doc.references)} references |"
+        )
+
+

@@ -62,6 +62,8 @@ class AppSettings(BaseSettings):
     # Redis
     redis_url: str = Field(default="redis://localhost:6379")
     redis_password: Optional[str] = Field(default=None)
+    redis_port: int = 6379
+    redis_host: Optional[str] = None
 
 
 

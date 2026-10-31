@@ -1,6 +1,10 @@
 """Custom exceptions for the RAG system."""
+# One base class, RAGException -> so I can catch all our app error's in one place
+# It accepts message and details
 
 from typing import Any, Optional
+
+
 
 class RAGException(Exception):
     """Base exception for all RAG errors."""
@@ -35,6 +39,29 @@ class ParsingError(DocumentProcessingError):
     """Error during document parsing."""
     pass
 
+
+# =============================================================================
+# Storage Exceptions
+# =============================================================================
+
+
+# =============================================================================
+# Cache Exceptions
+# =============================================================================
+
+class CacheError(RAGException):
+    """Error during cache operations."""
+    pass
+
+
+class RedisError(RAGException):
+    """Error during Redis operations."""
+    pass
+
+
+class RedisConnectionError(RAGException):
+    """Cannot connect to Redis"""
+    pass
 
 
 
